@@ -180,7 +180,6 @@ header {
 
     font-size: 1em;
     text-align: center;
-    word-break: break-all;
     white-space: pre-wrap;
 
     height: auto;
@@ -347,6 +346,10 @@ h3 {
 
     body {
         margin: 0 100px;
+    }
+
+    .horizontal_container_main {
+        flex-direction: column;
     }
 
     #photo_container {

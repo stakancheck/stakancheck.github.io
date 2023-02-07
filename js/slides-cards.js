@@ -9,6 +9,16 @@ function onWndLoad() {
     const slider = document.querySelector('.slider-cards');
     const sliders = slider.children;
 
+    let offset = 60;
+    let offset_auto = 30;
+    let sliding = true
+
+    if (screen.width < 1000) {
+        offset = 200;
+        offset_auto = 100;
+        sliding = false
+    }
+
 
     let initX = null;
     let transX = 0;
@@ -57,7 +67,9 @@ function onWndLoad() {
         curSlide.addEventListener('touchstart', slideMouseDown, false);
     }
 
+
     init();
+
 
     function slideMouseDown(e) {
 
@@ -104,7 +116,7 @@ function onWndLoad() {
                 }
 
 
-                if (Math.abs(transX) >= curSlide.offsetWidth - 30) {
+                if (Math.abs(transX) >= curSlide.offsetWidth - offset_auto) {
                     finish = true;
                     document.removeEventListener('mousemove', slideMouseMove, false);
                     document.removeEventListener('touchmove', slideMouseMove, false);
@@ -124,8 +136,11 @@ function onWndLoad() {
                     }, 201);
                 }
 
-
-                i += 10;
+                if (sliding) {
+                    i += 10;
+                } else {
+                    i -= 10;
+                }
                 if (!finish) {
                     myLoop();
                 }
@@ -151,6 +166,12 @@ function onWndLoad() {
 
         transY = -Math.abs(transX / 15);
 
+        if (!sliding) {
+            if (transX > 50) {
+                slideMouseUp()
+            }
+        }
+
 
         curSlide.style.transition = 'none';
         curSlide.style["webkitTransform"] = 'translateX(' + transX + 'px)' + ' rotateZ(' + rotZ + 'deg)' + ' translateY(' + transY + 'px)';
@@ -168,7 +189,7 @@ function onWndLoad() {
 
         initX = mouseX;
         e.preventDefault();
-        if (Math.abs(transX) >= curSlide.offsetWidth - 60) {
+        if (Math.abs(transX) >= curSlide.offsetWidth - offset) {
             document.removeEventListener('mousemove', slideMouseMove, false);
             document.removeEventListener('touchmove', slideMouseMove, false);
             curSlide.style.transition = 'ease 0.2s';

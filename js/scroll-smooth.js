@@ -14,7 +14,7 @@ function initScroll() {
                     block: 'start'
                 })
             } else {
-                window.open(blockID)
+                window.open(blockID, "_self")
             }
 
 
