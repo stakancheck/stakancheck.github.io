@@ -9,6 +9,9 @@
     --gray: #878787;
     --display-text: #F1F1F1;
     --link-color: #6ea0ff;
+    --link-bg-color: var(--linear-gradient-color);
+    --pink: #ed84ec;
+    --green: #46dacf;
 }
 
 
@@ -169,13 +172,16 @@ header {
     color: var(--gray);
 }
 
-/* ANIMATED TEXT */
+
+/* FOOTER */
 
 .footer {
     /* main_display */
 
     font-size: 1em;
     text-align: center;
+    word-break: break-all;
+    white-space: pre-wrap;
 
     height: auto;
 
@@ -197,12 +203,29 @@ header {
     background-image: var(--linear-gradient-color);
 }
 
+/* FOOTER END */
 
-.main-text-container {
+
+.horizontal_container_main {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
     display: flex;
+
+    gap: 32px;
+
+    padding: 32px 0;
+}
+
+
+.main-text-container {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    display: flex;
+    line-height: 30px;
+
+    color: var(--display-text);
 
     gap: 32px;
 
@@ -235,6 +258,44 @@ header {
     background-clip: text;
 }
 
+
+/* URLS ------------------------------------------------------------------------------------------------------------- */
+
+.main-text-container a {
+    color: var(--link-color);
+    position: relative;
+}
+
+.main-text-container a:hover {
+    color: var(--display-text);
+    text-shadow: 1px 1px var(--gray);
+}
+
+.main-text-container a::before {
+    transform: scaleX(0);
+    transform-origin: bottom right;
+}
+
+.main-text-container a:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.main-text-container a::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    inset: 0 0 0 0;
+    background: var(--link-bg-color);
+    z-index: -1;
+    transition: transform .2s ease;
+}
+
+
+
+/* HEADERS -----------------------------------------------------------------------------------------------------------*/
+
 h2 {
     font-size: 2em;
     text-align: left;
@@ -251,14 +312,8 @@ h3 {
     color: var(--display-text);
 }
 
-.main-text a {
-    text-decoration: none;
-    color: var(--link-color);
-}
 
-.main-text a:hover {
-    text-decoration: underline;
-}
+/* INDIVIDUAL STYLES BY ID -------------------------------------------------------------------------------------------*/
 
 #photo_container {
     display: flex;
@@ -267,8 +322,12 @@ h3 {
     flex-direction: column;
 }
 
+#url_edu li{
+    margin-bottom: 20px;
+}
 
-/* RESPONSIVE DESIGN */
+
+/* RESPONSIVE UI -----------------------------------------------------------------------------------------------------*/
 @media all and (max-width: 1500px) {
     body {
         margin: 0 10vw;
@@ -284,10 +343,6 @@ h3 {
     .logo-image-holder {
         width: 200px;
         margin-top: 20px;
-    }
-
-    .main-text-container {
-        flex-direction: column;
     }
 
     body {
