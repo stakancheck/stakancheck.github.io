@@ -8,11 +8,16 @@ function initScroll() {
             e.preventDefault()
 
             const blockID = anchor.getAttribute('href')
+            if (blockID.startsWith("#")) {
+                document.querySelector(blockID).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                })
+            } else {
+                window.open(blockID)
+            }
 
-            document.querySelector(blockID).scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            })
+
         })
     }
 }
