@@ -313,6 +313,7 @@ header {
 .inline_link {
     color: var(--link-color);
     position: relative;
+    padding: 2px 5px;
 }
 
 .main-text-container a:hover,
