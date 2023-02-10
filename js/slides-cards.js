@@ -168,7 +168,10 @@ function onWndLoad() {
 
         if (!sliding) {
             if (transX > 50) {
-                slideMouseUp()
+                setTimeout(function () {
+                    slideMouseUp();
+
+                }, 201);
             }
         }
 
