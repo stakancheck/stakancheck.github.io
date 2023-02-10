@@ -307,27 +307,34 @@ header {
 
 /* URLS ------------------------------------------------------------------------------------------------------------- */
 
-.main-text-container a {
+
+
+.main-text-container a,
+.inline_link {
     color: var(--link-color);
     position: relative;
 }
 
-.main-text-container a:hover {
+.main-text-container a:hover,
+.inline_link:hover {
     color: var(--display-text);
     text-shadow: 1px 1px var(--gray);
 }
 
-.main-text-container a::before {
+.main-text-container a::before,
+.inline_link::before {
     transform: scaleX(0);
     transform-origin: bottom right;
 }
 
-.main-text-container a:hover::before {
+.main-text-container a:hover::before,
+.inline_link:hover::before {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
 
-.main-text-container a::before {
+.main-text-container a::before,
+.inline_link::before {
     content: " ";
     display: block;
     position: absolute;
