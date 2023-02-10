@@ -1,6 +1,7 @@
 @import "./reset.css";
 @import "./animations.css";
 @import "./slides-card.css";
+@import "./boxy-view-style.css";
 
 @import url('https://fonts.googleapis.com/css2?family=Pridi&family=Raleway&display=swap');
 
@@ -8,14 +9,17 @@
 :root {
     --linear-gradient-color: linear-gradient(90deg, rgba(70, 218, 207, 1) 0%, rgba(146, 178, 222, 1) 49%, rgba(238, 132, 236, 1) 100%);
     --background-color: #14151a;
+    --black: #000000;
     --gray: #878787;
     --display-text: #F1F1F1;
     --link-color: #6ea0ff;
     --link-bg-color: var(--linear-gradient-color);
-    --pink: #ed84ec;
+    --pink: #e688e5;
     --green: #46dacf;
 }
 
+::selection      { color: var(--display-text);  background: var(--gray);}
+::-moz-selection { color: var(--display-text);  background: var(--gray);}
 
 body {
     /* back */
@@ -30,6 +34,8 @@ body {
     letter-spacing: 0.1em;
 
     margin: 0 20vw;
+
+    -webkit-tap-highlight-color: transparent;
 }
 
 header {
@@ -144,7 +150,9 @@ header {
     text-align: center;
 
     color: var(--display-text);
+}
 
+.main-menu .menu-button {
     padding-left: 20px;
     padding-right: 20px;
 }
@@ -155,6 +163,10 @@ header {
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
+}
+
+.menu-button:active {
+    transform: scale(0.8);
 }
 
 
@@ -382,12 +394,13 @@ h4 {
 
 .contact_card:hover path {
     transition: all 0.2s ease-out;
-    fill: var(--background-color);
+    fill: var(--pink);
 }
 
 .contact_card:hover h4 {
+    font-weight: bold;
     transition: all 0.2s ease-out;
-    color: var(--background-color);
+    color: var(--pink);
 }
 
 .contact_card {
@@ -406,7 +419,7 @@ h4 {
 
 .contact_card:hover {
     transition: all 0.2s ease-out;
-    box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+    box-shadow: 0 4px 10px var(--pink);
     top: -4px;
     background-color: var(--display-text);
     color: var(--background-color);

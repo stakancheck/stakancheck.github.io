@@ -1,24 +1,21 @@
 window.addEventListener('load', onWndLoad, false);
-let right = document.getElementById("right_slide_but");
-let slideFunc;
-const time_to_slide = 0.1;
+let right = document.getElementById("right_slide_out");
+let slide_f
 
 
 function onWndLoad() {
 
-    const slider = document.querySelector('.slider-cards');
-    const sliders = slider.children;
+    const slider = document.querySelector('.slider-cards')
+    const sliders = slider.children
 
-    let offset = 60;
-    let offset_auto = 30;
+    let offset = 60
+    let offset_auto = 30
     let sliding = true
 
-    if (screen.width < 1000) {
-        offset = 200;
-        offset_auto = 100;
+    if ((screen.orientation.type === "portrait-secondary") | (screen.orientation.type === "portrait-primary")) {
         sliding = false
+        offset = 120
     }
-
 
     let initX = null;
     let transX = 0;
@@ -65,6 +62,7 @@ function onWndLoad() {
 
         curSlide.addEventListener('mousedown', slideMouseDown, false);
         curSlide.addEventListener('touchstart', slideMouseDown, false);
+
     }
 
 
@@ -150,7 +148,7 @@ function onWndLoad() {
         myLoop();
     }
 
-    slideFunc = slideAuto;
+    slide_f = slideAuto
 
     function slideMouseMove(e) {
         let mouseX;
@@ -193,22 +191,25 @@ function onWndLoad() {
         initX = mouseX;
         e.preventDefault();
         if (Math.abs(transX) >= curSlide.offsetWidth - offset) {
-            document.removeEventListener('mousemove', slideMouseMove, false);
-            document.removeEventListener('touchmove', slideMouseMove, false);
-            curSlide.style.transition = 'ease 0.2s';
-            curSlide.style.opacity = 0;
-            prevSlide = curSlide;
-            attachEvents(sliders[sliders.length - 2]);
-            slideMouseUp();
-            setTimeout(function () {
 
-                slider.insertBefore(prevSlide, slider.firstChild);
-
-                prevSlide.style.transition = 'none';
-                prevSlide.style.opacity = '1';
+            if ((transX < 0) || (sliding)) {
+                document.removeEventListener('mousemove', slideMouseMove, false);
+                document.removeEventListener('touchmove', slideMouseMove, false);
+                curSlide.style.transition = 'ease 0.2s';
+                curSlide.style.opacity = 0;
+                prevSlide = curSlide;
+                attachEvents(sliders[sliders.length - 2]);
                 slideMouseUp();
+                setTimeout(function () {
 
-            }, 201);
+                    slider.insertBefore(prevSlide, slider.firstChild);
+
+                    prevSlide.style.transition = 'none';
+                    prevSlide.style.opacity = '1';
+                    slideMouseUp();
+
+                }, 201);
+            }
 
 
         }
@@ -237,14 +238,7 @@ function onWndLoad() {
         document.removeEventListener('touchmove', slideMouseMove, false);
 
     }
-
-
 }
 
-right.addEventListener('mousedown', slideFunc)
 
-document.addEventListener('keydown', function (event) {
-    if (event.key === 'ArrowRight') {
-        rightSlide();
-    }
-});
+
