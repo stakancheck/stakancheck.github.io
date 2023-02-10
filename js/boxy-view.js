@@ -2,6 +2,13 @@ window.addEventListener('load', init, false)
 
 function init() {
 
+    if (!(screen.orientation.type === "portrait-secondary") && !(screen.orientation.type === "portrait-primary")) {
+        boxy_view()
+    }
+}
+
+
+function boxy_view() {
     const nodes = [].slice.call(document.querySelectorAll("li.boxy-view-li"), 0);
     const directions = {0: 'top', 1: 'right', 2: 'bottom', 3: 'left'};
     const classNames = ['in', 'out'].map(p => Object.values(directions).map(d => `${p}-${d}`)).reduce((a, b) => a.concat(b));
@@ -30,5 +37,4 @@ function init() {
 
 
     nodes.forEach(node => new Item(node));
-
 }

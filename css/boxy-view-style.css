@@ -270,3 +270,47 @@ li {
     width: 100%;
 
 }
+
+@media all and (max-width: 900px) {
+
+    .boxy-view-li h3 {
+        margin: 0;
+        text-align: start;
+        font-size: 1.2em;
+        color: var(--background-color);
+    }
+
+
+    .info {
+        position: relative;
+        border-radius: 0 6px 6px 0;
+        transform: none;
+    }
+
+    li {
+        perspective: none;
+    }
+
+    .boxy-view-li .normal {
+        border-radius: 6px 0 0 6px;
+    }
+
+    .boxy-view-li {
+
+        display: flex;
+        flex-direction: row;
+        width: 420px;
+    }
+
+    .boxy-view-li img:hover {
+        filter: none;
+        transition: none;
+    }
+
+    .boxy-view-li:hover {
+        filter: brightness(55%);
+        transition: 0.3s;
+    }
+
+}
+
