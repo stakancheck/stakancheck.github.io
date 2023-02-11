@@ -25,6 +25,12 @@
 }
 
 .slider-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-items: flex-end;
+    justify-content: flex-end;
+
     flex-shrink: 0;
 
     -webkit-animation: animation ease 1s;
@@ -33,8 +39,6 @@
 
     width: 340px;
     height: 370px;
-
-    padding: 32px;
 
     transition: ease-in-out .2s;
 }
@@ -75,7 +79,14 @@
     transition: cubic-bezier(0, 1.95, .49, .73) .4s;
 }
 
+@media all and (max-width: 900px) {
+    .slider-cards {
+        align-items: center;
+        justify-items: center;
+        justify-content: center;
 
+    }
+}
 
 
 
