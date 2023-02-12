@@ -9,11 +9,12 @@
 :root {
     --linear-gradient-color: linear-gradient(90deg, rgba(70, 218, 207, 1) 0%, rgba(146, 178, 222, 1) 49%, rgba(238, 132, 236, 1) 100%);
     --background-color: #14151a;
+    --bg-with-opacity: #14151a20;
     --black: #000000;
     --dark-gray: #21222a;
     --gray: #878787;
     --blue: #6ea0ff;
-    --display-text: #F1F1F1;
+    --display-text: #f1f1f1;
     --link-color: var(--blue);
     --link-bg-color: var(--linear-gradient-color);
     --pink: #e688e5;
@@ -169,6 +170,7 @@ header {
 
 .menu-button:active {
     transform: scale(0.8);
+    transition: 0.2s;
 }
 
 
@@ -598,5 +600,23 @@ h4 {
         gap: 30px;
 
     }
+
+
+    .menu-button:hover {
+        background-image: unset;
+        -webkit-background-clip: unset;
+        background-clip: unset;
+        color: var(--display-text);
+    }
+
+    .menu-button:active {
+        transform: scale(0.8);
+        transition: 0.2s;
+        background-image: var(--linear-gradient-color);
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+
 
 }
