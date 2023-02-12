@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Bree+Serif);
+
 /* the important bits */
 li {
     perspective: 420px;
@@ -275,25 +275,35 @@ li {
 .boxy-view-li .boxy-view-link {
     display: none;
 
-    margin: 10px 0;
+    margin: 5px 0;
     font-size: 1em;
     color: var(--link-color);
-    text-align: center;
+    text-align: right;
     position: absolute;
     width: 100%;
+    padding-right: 15px;
     bottom: 0;
 }
 
 @media all and (max-width: 900px) {
 
     .boxy-view-container {
-        height: 60vh;
+        margin: 0;
+    }
+
+    .boxy-view-ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: start;
         border-radius: 6px;
-        overflow-scrolling: auto;
-        overflow: auto;
 
+        overflow-y: hidden;
+        overflow-x: scroll;
         scroll-behavior: smooth;
-
+        padding-bottom: 10px;
+        /*padding-left: 10vw;*/
+        /*padding-right: 10vw;*/
     }
 
     .boxy-view-li h3 {
@@ -307,9 +317,9 @@ li {
     .boxy-view-li .info {
         position: relative;
         transform: none;
-        width: auto;
+        width: 300px;
         height: auto;
-        border-radius: 0 0 6px 6px;
+        background: none;
     }
 
     li {
@@ -317,9 +327,9 @@ li {
     }
 
     .boxy-view-li .normal {
-        width: auto;
+        width: 300px;
         line-height: normal;
-        height: auto;
+        height: 300px;
         padding: 10px;
         margin: 0;
     }
@@ -330,13 +340,12 @@ li {
     }
 
     .boxy-view-li {
-        display: inline;
+        flex-shrink: 0;
+        flex-grow: 1;
 
-        position: relative;
         width: 300px;
         height: 60vh;
         border-radius: 6px;
-        overflow: hidden;
 
         background-color: var(--display-text);
     }
