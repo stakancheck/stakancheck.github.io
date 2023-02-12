@@ -460,6 +460,25 @@ h4 {
 }
 
 
+
+.simple-toast {
+    background-color: var(--dark-gray);
+    border-radius: 5px;
+    color: var(--display-text);
+    box-shadow: 2px 2px 5px 3px var(--bg-with-opacity);
+    padding: 1rem;
+}
+
+.toast {
+    left: 50%;
+    margin: 0 auto;
+    position: fixed;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
+
+
 /* RESPONSIVE UI -----------------------------------------------------------------------------------------------------*/
 @media all and (max-width: 1500px) {
     body {

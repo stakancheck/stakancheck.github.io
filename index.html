@@ -287,9 +287,13 @@
     <h2 class="section-title">Где я есть?</h2>
 
     <div class="main-column-container">
+
+        <script type="application/javascript" src="./js/toasts.js"></script>
+
         <h4>
-            Электропочта: stakancheck@gmail.com
+            Электропочта: <a style="color: var(--link-color); cursor: pointer" onclick="navigator.clipboard.writeText('stakancheck@gmail.com');showToast('Адрес скопирован!', 2000, 'simple-toast');">stakancheck@gmail.com</a>
         </h4>
+
         <div class="horizontal_container_main_centered">
             <a class="contact_card" href="https://t.me/stakancheck">
                 <svg class="service_icon" width="200" height="200" viewBox="0 0 200 200" fill="none"
