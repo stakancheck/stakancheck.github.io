@@ -1,0 +1,192 @@
+
+:root {
+    --ligth-main-bg: #ffdab7;
+    --light-bg: #eec399;
+    --dark-blue-display: #222035;
+    --brown: #8f563b;
+    --pixel-bg: var(--light-bg);
+    /* ↑ Inner background color */
+
+    --pixel-border: var(--brown);
+    /* ↑ Inner border color */
+
+    --pixel-border-2: var(--brown);
+    /* ↑ Middle border color */
+
+    --pixel-border-3: var(--pixel-border);
+    /* ↑ Outer border color */
+
+    --pixel: .125rem;
+    /* ↑ Pixel size */
+}
+
+@font-face {
+    src: url("../../static/vcr.ttf");
+    font-family: "VCR OSD Mono [RUS by Daymarius]";
+}
+
+body {
+    display: block;
+    background-color: var(--ligth-main-bg);
+}
+
+h1 {
+    font-family: "VCR OSD Mono [RUS by Daymarius]", serif;
+    font-size: 5em;
+
+    color: var(--dark-blue-display);
+}
+
+h2 {
+    font-family: "VCR OSD Mono [RUS by Daymarius]", serif;
+    font-size: 2em;
+
+    color: var(--dark-blue-display);
+}
+
+header {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+
+    padding: .5rem;
+    height: 20vh;
+
+    text-align: center;
+
+    background-color: var(--light-bg);
+    border-bottom: 5px solid var(--brown);
+}
+
+.head-banner-img {
+    image-rendering: pixelated;
+    height: 10rem;
+}
+
+.main-holder {
+
+    background-color: var(--light-bg);
+    margin:  5rem 20vw;
+    padding: 1rem 2rem;
+
+    height: 80vh;
+
+}
+
+
+.pixel-border {
+    background: var(--pixel-bg);
+    box-shadow:
+
+        /* Inner Background Color */
+            0 calc(var(--pixel) * -3) 0 calc(var(--pixel) * -1) var(--pixel-bg),
+            0 calc(var(--pixel) * 3) 0 calc(var(--pixel) * -1) var(--pixel-bg),
+            0 calc(var(--pixel) * -6) 0 calc(var(--pixel) * -2) var(--pixel-bg),
+            0 calc(var(--pixel) * 6) 0 calc(var(--pixel) * -2) var(--pixel-bg),
+            0 calc(var(--pixel) * -9) 0 calc(var(--pixel) * -4) var(--pixel-bg),
+            0 calc(var(--pixel) * 9) 0 calc(var(--pixel) * -4) var(--pixel-bg),
+            0 calc(var(--pixel) * -12) 0 calc(var(--pixel) * -6) var(--pixel-bg),
+            0 calc(var(--pixel) * 12) 0 calc(var(--pixel) * -6) var(--pixel-bg),
+
+                /* Pixel Border Layer 1 */
+            calc(var(--pixel) * -1) 0 0 0 var(--pixel-border),
+            var(--pixel) 0 0 0 var(--pixel-border),
+            0 calc(var(--pixel) * -2) 0 0 var(--pixel-border),
+            0 calc(var(--pixel) * 2) 0 0 var(--pixel-border),
+            0 calc(var(--pixel) * -5) 0 calc(var(--pixel) * -1) var(--pixel-border),
+            0 calc(var(--pixel) * 5) 0 calc(var(--pixel) * -1) var(--pixel-border),
+            0 calc(var(--pixel) * -7) 0 calc(var(--pixel) * -2) var(--pixel-border),
+            0 calc(var(--pixel) * 7) 0 calc(var(--pixel) * -2) var(--pixel-border),
+            0 calc(var(--pixel) * -10) 0 calc(var(--pixel) * -4) var(--pixel-border),
+            0 calc(var(--pixel) * 10) 0 calc(var(--pixel) * -4) var(--pixel-border),
+            0 calc(var(--pixel) * -13) 0 calc(var(--pixel) * -6) var(--pixel-border),
+            0 calc(var(--pixel) * 13) 0 calc(var(--pixel) * -6) var(--pixel-border),
+
+                /* Pixel Border Layer 2 */
+            calc(var(--pixel) * -2) 0 0 0 var(--pixel-border-2),
+            calc(var(--pixel) * 2) 0 0 0 var(--pixel-border-2),
+            0 calc(var(--pixel) * -1) 0 var(--pixel) var(--pixel-border-2),
+            0 var(--pixel) 0 var(--pixel) var(--pixel-border-2),
+            0 calc(var(--pixel) * -4) 0 0 var(--pixel-border-2),
+            0 calc(var(--pixel) * 4) 0 0 var(--pixel-border-2),
+            0 calc(var(--pixel) * -6) 0 calc(var(--pixel) * -1) var(--pixel-border-2),
+            0 calc(var(--pixel) * 6) 0 calc(var(--pixel) * -1) var(--pixel-border-2),
+            0 calc(var(--pixel) * -8) 0 calc(var(--pixel) * -2) var(--pixel-border-2),
+            0 calc(var(--pixel) * 8) 0 calc(var(--pixel) * -2) var(--pixel-border-2),
+            0 calc(var(--pixel) * -11) 0 calc(var(--pixel) * -4) var(--pixel-border-2),
+            0 calc(var(--pixel) * 11) 0 calc(var(--pixel) * -4) var(--pixel-border-2),
+            0 calc(var(--pixel) * -14) 0 calc(var(--pixel) * -6) var(--pixel-border-2),
+            0 calc(var(--pixel) * 14) 0 calc(var(--pixel) * -6) var(--pixel-border-2),
+
+                /* Border Layer 3: --pixel-border-3 */
+            calc(var(--pixel) * -3) 0 0 0 var(--pixel-border-3),
+            calc(var(--pixel) * 3) 0 0 0 var(--pixel-border-3),
+            0 0 0 calc(var(--pixel) * 2) var(--pixel-border-3),
+            0 calc(var(--pixel) * -3) 0 var(--pixel) var(--pixel-border-3),
+            0 calc(var(--pixel) * 3) 0 var(--pixel) var(--pixel-border-3),
+            0 calc(var(--pixel) * -5) 0 0 var(--pixel-border-3),
+            0 calc(var(--pixel) * 5) 0 0 var(--pixel-border-3),
+            0 calc(var(--pixel) * -7) 0 calc(var(--pixel) * -1) var(--pixel-border-3),
+            0 calc(var(--pixel) * 7) 0 calc(var(--pixel) * -1) var(--pixel-border-3),
+            0 calc(var(--pixel) * -9) 0 calc(var(--pixel) * -2) var(--pixel-border-3),
+            0 calc(var(--pixel) * 9) 0 calc(var(--pixel) * -2) var(--pixel-border-3),
+            0 calc(var(--pixel) * -12) 0 calc(var(--pixel) * -4) var(--pixel-border-3),
+            0 calc(var(--pixel) * 12) 0 calc(var(--pixel) * -4) var(--pixel-border-3),
+            0 calc(var(--pixel) * -15) 0 calc(var(--pixel) * -6) var(--pixel-border-3),
+            0 calc(var(--pixel) * 15) 0 calc(var(--pixel) * -6) var(--pixel-border-3);
+}
+
+
+@media all and (max-width: 1500px){
+    h1 {
+        font-size: 4em;
+    }
+}
+
+@media all and (max-width: 1200px) {
+
+    header {
+        height: 16vh;
+        gap: 2rem;
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+
+    .head-banner-img {
+        height: 8rem;
+    }
+
+    .main-holder {
+        margin: 5rem 10vw;
+    }
+}
+
+@media all and (max-width: 900px) {
+
+    header {
+        height: 10vh;
+        gap: .5rem;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .head-banner-img {
+        height: 5rem;
+    }
+
+    .main-holder {
+        margin: 2rem .375rem;
+    }
+}
+
+
