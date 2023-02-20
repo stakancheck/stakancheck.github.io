@@ -289,6 +289,14 @@ footer {
         padding: 2rem;
         gap: 2rem;
     }
+
+    .article_container p {
+        font-size: 2em;
+    }
+
+    .article_container h2 {
+        font-size: 4em;
+    }
 }
 
 
