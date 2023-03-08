@@ -180,7 +180,7 @@ nav>.display-text {
     position: absolute;
     top: 1rem;
     left: 1rem;
-    background-image: url("/assets/pixelated/home-micro-normal.png");
+    background-image: url("../../assets/pixelated/home-micro-normal.png");
     background-size: contain;
     image-rendering: pixelated;
 }
