@@ -229,6 +229,16 @@ li {
 .boxy-view-li h3 {
     margin: 0;
     font-size: 1.2em;
+    line-height: 1.4em;
+    color: var(--background-color);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--bg-with-opacity);
+}
+
+.boxy-view-li h4 {
+    margin: 0;
+    font-size: 1em;
+    line-height: 1.1em;
     color: var(--background-color);
     padding-bottom: 10px;
     border-bottom: 1px solid var(--bg-with-opacity);
@@ -278,6 +288,14 @@ li {
     display: none;
 }
 
+.contrast {
+    filter: contrast(2.0);
+}
+
+#list_limited li:nth-of-type(1n+6) {
+    display: none;
+}
+
 
 @media all and (max-width: 900px) {
 
@@ -304,6 +322,15 @@ li {
         margin: 0;
         text-align: start;
         font-size: 1.2em;
+        line-height: 1.4em;
+        color: var(--background-color);
+    }
+
+    .boxy-view-li h4 {
+        margin: 0;
+        text-align: start;
+        font-size: 1em;
+        line-height: 1.1em;
         color: var(--background-color);
     }
 
