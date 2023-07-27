@@ -41,9 +41,6 @@ body {
     font-size: 1em;
     text-align: left;
     letter-spacing: 0.1em;
-
-    margin: 0 20vw;
-
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -210,7 +207,7 @@ header {
 
     height: auto;
 
-    margin: 30px 0;
+    margin: 30px 30px;
     padding: 10px;
 
     border-radius: 6px;
@@ -280,8 +277,6 @@ header {
     color: var(--display-text);
 
     gap: 32px;
-
-    padding: 32px 0;
 }
 
 .main-text {
@@ -297,6 +292,7 @@ header {
     align-items: flex-start;
     display: flex;
 
+    margin: 0 20vw;
     padding: 30px 0;
 }
 
@@ -365,6 +361,16 @@ h2 {
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
+}
+
+.main-text-container h3 {
+    font-size: 2em;
+    text-align: center;
+
+    color: var(--display-text);
+
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 h3 {
@@ -450,6 +456,39 @@ h4 {
 
 }
 
+/* PARALAX BACKGROUND SECTION ----------------------------------------------------------------------------------------*/
+
+
+.parallax-container {
+    background-image: url("../assets/background_code_xcode.png");
+    width: 100%;
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.simple_logo {
+    width: 15dvi;
+    height: 15dvi;
+}
+
+/*.parallax-container {*/
+/*    position: fixed;*/
+/*    left: 0;*/
+/*    right: 0;*/
+/*    z-index: 1;*/
+/*    display: block;*/
+/*    background-image: url("../assets/background_code_xcode.png");*/
+/*    width: 1200px;*/
+/*    height: 800px;*/
+/*    filter: blur(5px);*/
+/*    background-attachment: fixed;*/
+/*    background-position: center;*/
+/*    background-repeat: no-repeat;*/
+/*    background-size: cover;*/
+/*}*/
 
 
 /* INDIVIDUAL STYLES BY ID -------------------------------------------------------------------------------------------*/
@@ -476,6 +515,11 @@ h4 {
     padding: 1rem;
 }
 
+.simple_list {
+    list-style-type: circle;
+    margin: 0 0 0 10px;
+}
+
 .toast {
     left: 50%;
     margin: 0 auto;
@@ -484,11 +528,57 @@ h4 {
     z-index: 100;
 }
 
+/* BUTTON MORE INFO --------------------------------------------------------------------------------------------------*/
+
+.button-info {
+    display: flex;
+    flex-direction: row;
+
+    font-size: 1em;
+    color: var(--display-text);
+    text-align: right;
+    margin: 10px 10px;
+    padding: 8px 24px;
+    border-radius: 6px;
+
+    align-items: center;
+    justify-content: end;
+
+    background-color: var(--dark-gray);
+
+    gap: 10px;
+
+    transition: all .1s ease-in;
+}
+
+.button-info svg {
+    height: 25px;
+    width: 25px;
+}
+
+.button-info svg path {
+    fill: var(--display-text);
+}
+
+.button-info:hover svg path {
+    fill: var(--blue);
+}
+
+.button-info:hover {
+    transform: scale(1.1);
+    color: var(--blue);
+    transition: all .1s ease-out;
+}
+
+.button-info:active {
+    transform: scale(.9);
+    transition: all .1s ease-out;
+}
 
 
 /* RESPONSIVE UI -----------------------------------------------------------------------------------------------------*/
 @media screen and (max-width: 82rem) {
-    body {
+    .new-section {
         margin: 0 10vw;
     }
 
@@ -504,7 +594,7 @@ h4 {
         margin-top: 20px;
     }
 
-    body {
+    .new-section {
         margin: 0 100px;
     }
 
@@ -537,7 +627,14 @@ h4 {
         gap: 20px;
     }
 
-    body {
+    .simple_logo {
+        display: block;
+        width: 60vw;
+        height: auto;
+        aspect-ratio: initial;
+    }
+
+    .new-section {
         margin: 0 20px;
     }
 
@@ -546,6 +643,10 @@ h4 {
     }
 
     h3 {
+        font-size: 1.5em;
+    }
+
+    .main-text-container h3 {
         font-size: 1.5em;
     }
 
