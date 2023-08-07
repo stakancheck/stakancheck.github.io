@@ -25,7 +25,10 @@
     --link-bg-color: var(--linear-gradient-color);
     --pink: #e688e5;
     --green: #46dacf;
+
+    --logo_border_radius: 20px;
 }
+
 
 ::selection      { color: var(--display-text);  background: var(--gray);}
 ::-moz-selection { color: var(--display-text);  background: var(--gray);}
@@ -262,6 +265,30 @@ header {
     padding: 64px 0;
 }
 
+/* HORIZONTAL LINKS BUTTONS DIV --------------------------------------------------------------------------------------*/
+
+.horizontal_links_buttons_container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    align-content: flex-end;
+    justify-content: flex-end;
+
+    gap: 12px;
+    margin-left: auto;
+    margin-top: 12px;
+}
+
+.mail_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: flex-start;
+    justify-content: flex-start;
+
+    gap: 12px;
+}
+
 
 /* MAIN TEXT ---------------------------------------------------------------------------------------------------------*/
 
@@ -350,6 +377,83 @@ header {
 }
 
 
+/* ANIMATED LOGO -----------------------------------------------------------------------------------------------------*/
+
+.cover {
+    display: block;
+    width: 12dvi;
+    height: 12dvi;
+    aspect-ratio: 1;
+    margin: 15px;
+    border-radius: var(--logo_border_radius);
+}
+
+.atvImg {
+    border-radius: var(--logo_border_radius);
+    transform-style: preserve-3d;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.atvImg img {
+    border-radius: var(--logo_border_radius);
+    box-shadow: 0 2px 8px rgba(14,21,47,0.25);
+}
+
+.atvImg-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--logo_border_radius);
+    transition: all 0.2s ease-out;
+}
+
+.atvImg-container.over .atvImg-shadow {
+    box-shadow: 0 45px 100px rgba(64, 71, 101, 0.4), 0 16px 40px rgba(53, 60, 80, 0.4);
+}
+
+.atvImg-layer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--logo_border_radius);
+    overflow: hidden;
+    transform-style: preserve-3d;
+}
+
+.atvImg-rendered-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    background-size: cover;
+    transition: all 0.1s ease-out;
+    overflow: hidden;
+    border-radius: var(--logo_border_radius);
+}
+
+.atvImg-shadow {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    transition: all 0.2s ease-out;
+    /*box-shadow: 0 8px 30px rgba(19, 98, 187, 0.39);*/
+}
+
+.atvImg-shine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: var(--logo_border_radius);
+    background: linear-gradient(135deg, rgba(255,255,255,.25) 0%,rgba(255,255,255,0) 60%);
+}
 
 /* HEADERS -----------------------------------------------------------------------------------------------------------*/
 
@@ -469,27 +573,6 @@ h4 {
     background-size: cover;
 }
 
-.simple_logo {
-    width: 15dvi;
-    height: 15dvi;
-}
-
-/*.parallax-container {*/
-/*    position: fixed;*/
-/*    left: 0;*/
-/*    right: 0;*/
-/*    z-index: 1;*/
-/*    display: block;*/
-/*    background-image: url("../assets/background_code_xcode.png");*/
-/*    width: 1200px;*/
-/*    height: 800px;*/
-/*    filter: blur(5px);*/
-/*    background-attachment: fixed;*/
-/*    background-position: center;*/
-/*    background-repeat: no-repeat;*/
-/*    background-size: cover;*/
-/*}*/
-
 
 /* INDIVIDUAL STYLES BY ID -------------------------------------------------------------------------------------------*/
 
@@ -534,11 +617,11 @@ h4 {
     display: flex;
     flex-direction: row;
 
-    font-size: 1em;
+    font-size: 1.3em;
     color: var(--display-text);
     text-align: right;
     margin: 10px 10px;
-    padding: 8px 24px;
+    padding: 12px 26px;
     border-radius: 6px;
 
     align-items: center;
@@ -586,6 +669,11 @@ h4 {
         width: 300px;
     }
 
+    .horizontal_container_main {
+        flex-direction: column;
+        align-items: center;
+    }
+
 }
 
 @media screen and (max-width: 62rem) {
@@ -617,6 +705,13 @@ h4 {
         line-height: 1.5em;
     }
 
+    .cover {
+        display: block;
+        width: 35dvi;
+        height: 35dvi;
+        aspect-ratio: 1;
+    }
+
 }
 
 
@@ -627,11 +722,9 @@ h4 {
         gap: 20px;
     }
 
-    .simple_logo {
-        display: block;
-        width: 60vw;
-        height: auto;
-        aspect-ratio: initial;
+    .button-info {
+        font-size: 1em;
+        padding: 8px 22px;
     }
 
     .new-section {
@@ -663,9 +756,35 @@ h4 {
         align-items: center;
     }
 
+    .cover {
+        display: block;
+        width: 60dvi;
+        height: 60dvi;
+        aspect-ratio: 1;
+    }
+
     .horizontal_container_main_centered {
         align-items: center;
         justify-content: space-around;
+    }
+
+    .mail_container {
+        width: 100%;
+        gap: 0;
+        flex-direction: column;
+    }
+
+    .horizontal_links_buttons_container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+
+        width: 100%;
+
+        gap: 12px;
+        margin: 0;
     }
 
     .contact_card {
