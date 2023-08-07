@@ -216,7 +216,6 @@ header {
     border-radius: 6px;
 
     color: var(--display-text);
-    text-shadow: 1px 1px var(--gray);
 
     border: 1px solid var(--gray);
     /*background-image: var(--linear-gradient-color);*/
@@ -517,17 +516,6 @@ h4 {
     color: var(--blue);
 }
 
-.contact_card:hover path {
-    transition: fill .1s ease-out;
-    fill: var(--background-color);
-}
-
-.contact_card:hover h4 {
-    /*font-weight: bold;*/
-    transition: color .1s ease-out;
-    color: var(--background-color);
-}
-
 .contact_card {
     display: flex;
     align-items: center;
@@ -540,26 +528,60 @@ h4 {
     margin: 12px;
     text-decoration: none;
     border: 2px solid var(--display-text);
-}
-
-.contact_card:before {
-    background: var(--dark-gray);
-    border-radius: 6px;
-    content: "";
-    inset: 0;
-    position: absolute;
-    transform: translate(10px, 10px);
     transition: all .1s ease-out;
-    z-index: -1;
 }
 
-.contact_card:hover:before {
-    transform: translate(0);
-    border-radius: 3px;
-    background-color: var(--display-text);
+@media (hover: hover) {
+    .contact_card:hover path {
+        fill: var(--background-color);
+        transition: fill .1s ease-out;
+    }
 
+    .contact_card:hover h4 {
+        /*font-weight: bold;*/
+        color: var(--background-color);
+        transition: color .1s ease-out;
+    }
+
+    .contact_card:before {
+        background: var(--dark-gray);
+        border-radius: 6px;
+        content: "";
+        inset: 0;
+        position: absolute;
+        transform: translate(10px, 10px);
+        z-index: -1;
+    }
+
+    .contact_card:hover:before {
+        transform: translate(0);
+        border-radius: 3px;
+        background-color: var(--display-text);
+        transition: all .1s ease-out;
+    }
 }
 
+@media (hover: none) {
+    .contact_card:active {
+        background-color: var(--display-text);
+    }
+
+    .contact_card:active path {
+        fill: var(--dark-gray);
+    }
+
+    .contact_card:active h4 {
+        color: var(--dark-gray);
+    }
+
+    .service_icon path {
+        fill: var(--display-text);
+    }
+
+    .contact_card h4 {
+        color: var(--display-text);
+    }
+}
 /* PARALAX BACKGROUND SECTION ----------------------------------------------------------------------------------------*/
 
 
@@ -639,23 +661,52 @@ h4 {
     width: 25px;
 }
 
+.button-info a {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+    color: var(--display-text);
+    text-decoration: none;
+}
+
 .button-info svg path {
     fill: var(--display-text);
 }
 
-.button-info:hover svg path {
-    fill: var(--blue);
+@media (hover: hover) {
+    .button-info:hover svg path {
+        fill: var(--blue);
+    }
+
+    .button-info:hover a {
+        color: var(--blue);
+    }
+
+    .button-info:hover {
+        transform: scale(1.1);
+        transition: all .1s ease-out;
+    }
+
+    .button-info:active {
+        transform: scale(.9);
+        transition: all .1s ease-out;
+    }
 }
 
-.button-info:hover {
-    transform: scale(1.1);
-    color: var(--blue);
-    transition: all .1s ease-out;
-}
+@media (hover: none) {
+    .button-info:active a {
+        color: var(--blue);
+    }
 
-.button-info:active {
-    transform: scale(.9);
-    transition: all .1s ease-out;
+    .button-info:active {
+        transform: scale(.9);
+        transition: all .1s ease-out;
+    }
+
+    .button-info:active svg path {
+        fill: var(--blue);
+    }
 }
 
 
@@ -787,39 +838,6 @@ h4 {
         margin: 0;
     }
 
-    .contact_card {
-        padding: 10px 0;
-        margin: 0;
-        gap: 10px;
-        border: none;
-        background: none;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-    }
-
-    .contact_card:before {
-        background: unset;
-        transform: unset;
-        transition: unset;
-    }
-
-    .contact_card:hover:before {
-        transform: translate(0);
-        border-radius: 3px;
-        background-color: var(--display-text);
-
-    }
-
-    .service_icon path {
-        fill: var(--display-text);
-    }
-
-    .contact_card h4 {
-        color: var(--display-text);
-    }
-
-
     .display-text {
         font-size: 3em;
     }
@@ -834,8 +852,7 @@ h4 {
 
     .footer {
         font-size: 0.6em;
-        margin-bottom: 0;
-        border-radius: 6px 6px 0 0;
+        border-radius: 6px;
         background-color: var(--dark-gray);
         border: none;
     }
@@ -864,5 +881,42 @@ h4 {
         background-clip: text;
     }
 
+    .contact_card {
+        padding: 10px 0;
+        margin: 0;
+        gap: 10px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+
+        border: none;
+        background-color: var(--dark-gray);
+    }
+
+
+}
+
+@media screen and (max-width: 38rem) {
+    .horizontal_links_buttons_container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        width: 100%;
+        margin: 0;
+    }
+
+    .horizontal_links_buttons_container .button-info {
+        font-size: 1.2em;
+        padding: 8px 22px;
+        width: 100%;
+        display: flex;
+        margin: 0;
+        flex-direction: row;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+    }
 
 }
