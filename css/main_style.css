@@ -107,7 +107,7 @@ header {
     align-items: center;
 
     /* text_accent */
-    border-width: 2px 0px;
+    border-width: 2px 0;
     border-style: solid;
     border-color: var(--gray);
 
