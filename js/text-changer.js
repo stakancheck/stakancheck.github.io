@@ -11,9 +11,9 @@ function set_texts() {
     let footer_main = document.getElementById("footer-main")
 
     if (screen.width > 1200) {
-        footer_main.textContent = "Copyright © 2023 by Artem Sukhanov | Stakancheck.space"
+        footer_main.textContent = "Copyright © 2023 by Artem Sukhanov | stakancheck@github.io"
     } else {
-        footer_main.textContent = "Copyright © 2023 by Artem Sukhanov\nStakancheck.space"
+        footer_main.textContent = "Copyright © 2023 by Artem Sukhanov\nstakancheck@github.io"
     }
 }
 
