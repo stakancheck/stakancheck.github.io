@@ -7,7 +7,7 @@
 window.addEventListener('load', initScroll, false)
 
 function initScroll() {
-    const anchors = document.querySelectorAll('a.menu-button')
+    const anchors = document.querySelectorAll('a.menu-button, a.tree-item-link')
 
     for (let anchor of anchors) {
         anchor.addEventListener('click', function (e) {
