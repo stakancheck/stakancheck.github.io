@@ -57,6 +57,10 @@ html {
     height: 100%;
 }
 
+a {
+    color: unset;
+}
+
 body {
     font-family: "VCR OSD Mono [RUS by Daymarius]", monospace;
     /*background-color: var(--main-bg-color);*/
@@ -236,7 +240,6 @@ nav>.display-text {
 }
 
 .main-holder>img {
-    image-rendering: pixelated;
     height: 4rem;
 }
 

@@ -1,0 +1,18 @@
+
+.theme-light {
+    --logotype-url: url("../media/logo-light.png")
+}
+
+.theme-dark {
+    --logotype-url: url("../media/logo-dark.png")
+}
+.sidebar-content .logotype {
+    height: 40px;
+    width: 100%;
+    background-position: left;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: var(--logotype-url);
+    margin-bottom: 30px;
+    margin-left: 10px;
+}

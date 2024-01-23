@@ -1,0 +1,1127 @@
+<!doctype html>
+<html>
+<head><title>Заводим Яндекс Карты в Compose Multipltform</title>
+    <base href="../">
+    <meta id="root-path" root-path="../">
+    <link href="https://publish-01.obsidian.md/access/f786db9fac45774fa4f0d8112e232d67/favicon-96x96.png" rel="icon"
+          sizes="96x96">
+    <meta content="width=device-width,initial-scale=1,user-scalable=yes,minimum-scale=1,maximum-scale=5"
+          name="viewport">
+    <meta charset="UTF-8">
+    <link href="lib/styles/obsidian-styles.css" rel="stylesheet">
+    <link href="lib/styles/theme.css" rel="stylesheet">
+    <link href="lib/styles/plugin-styles.css" rel="stylesheet">
+    <link href="lib/styles/snippets.css" rel="stylesheet">
+    <link href="lib/styles/generated-styles.css" rel="stylesheet">
+    <style></style>
+    <script src="lib/scripts/graph_view.js" type="module"></script>
+    <script src="lib/scripts/graph_wasm.js"></script>
+    <script src="lib/scripts/tinycolor.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha512-Ch/O6kL8BqUwAfCF7Ie5SX1Hin+BJgYH4pNjRqXdTEqMsis1TUYg+j6nnI9uduPjGaj7DN4UKCZgpvoExt6dkw=="
+            referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.2.4/pixi.min.js"></script>
+    <script src="lib/scripts/webpage.js"></script>
+    <script src="lib/scripts/generated.js"></script>
+</head>
+<body class="theme-dark mod-macos native-scrollbars show-inline-title borders-none colorful-active system-shade labeled-nav minimal-line-nums loading">
+<div class="webpage-container">
+    <div class="sidebar-left sidebar">
+        <div class="sidebar-container">
+            <div class="sidebar-sizer">
+                <div class="sidebar-content-positioner">
+                    <div class="sidebar-content">
+                        <a href="https://stakancheck.github.io/">
+                            <div class="logotype"></div>
+                        </a>
+                        <div><label class="theme-toggle-container" for="theme_toggle"><input class="theme-toggle-input"
+                                                                                             id="theme_toggle"
+                                                                                             type="checkbox">
+                            <div class="toggle-background"></div>
+                        </label></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar-gutter">
+            <div class="clickable-icon sidebar-collapse-icon">
+                <svg class="svg-icon" fill="none" height="100%" stroke="currentColor" stroke-linecap="round"
+                     stroke-linejoin="round" stroke-width="3" viewBox="0 0 24 24" width="100%"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path>
+                    <path d="M10 4V20"></path>
+                    <path d="M4 7H7"></path>
+                    <path d="M4 10H7"></path>
+                    <path d="M4 13H7"></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div class="document-container show">
+        <div class="markdown-preview-view markdown-rendered node-insert-event is-readable-line-width show-indentation-guide allow-fold-lists show-properties"
+             style="tab-size:4">
+            <style id="MJX-CHTML-styles"></style>
+            <div class="markdown-preview-sizer markdown-preview-section" style="min-height:9661px">
+                <div class="markdown-preview-pusher" style="width:1px;height:.1px;margin-bottom:0"></div>
+                <div class="mod-header"></div>
+                <div><pre class="frontmatter language-yaml" style="display:none" tabindex="0"><code
+                        class="language-yaml is-loaded"><span class="token key atrule">date created</span><span
+                        class="token punctuation">:</span> <span class="token datetime number">2024-01-23</span>
+<span class="token key atrule">date modified</span><span class="token punctuation">:</span> <span
+                            class="token datetime number">2024-01-23</span></code><button
+                        class="copy-code-button">Copy</button></pre>
+                </div>
+                <div class="heading-wrapper">
+                    <h1 class="heading" data-heading="Заводим Яндекс Карты в Compose Multipltform"
+                        id="Заводим_Яндекс_Карты_в_Compose_Multipltform">
+                        <div class="heading-before"></div>
+                        Заводим Яндекс Карты в Compose Multipltform
+                        <div class="heading-after">...</div>
+                    </h1>
+                    <div class="heading-children">
+                        <div><p><a aria-label="https://habr.com/ru/hubs/mobile_dev/" class="external-link"
+                                   data-tooltip-position="top" href="https://habr.com/ru/hubs/mobile_dev/" rel="noopener"
+                                   target="_blank">Разработка мобильных приложений*</a><a aria-label="https://habr.com/ru/hubs/kotlin/"
+                                                                                          class="external-link"
+                                                                                          data-tooltip-position="top"
+                                                                                          href="https://habr.com/ru/hubs/kotlin/"
+                                                                                          rel="noopener"
+                                                                                          target="_blank">Kotlin*</a><a
+                                aria-label="https://habr.com/ru/hubs/jetpack-compose/" class="external-link"
+                                data-tooltip-position="top" href="https://habr.com/ru/hubs/jetpack-compose/" rel="noopener"
+                                target="_blank">Jetpack Compose*</a><a aria-label="https://habr.com/ru/hubs/swift/"
+                                                                       class="external-link"
+                                                                       data-tooltip-position="top" href="https://habr.com/ru/hubs/swift/"
+                                                                       rel="noopener"
+                                                                       target="_blank">Swift*</a></p></div>
+                        <div><p><a aria-label="https://habr.com/ru/sandbox/208462/" class="external-link"
+                                   data-tooltip-position="top" href="https://habr.com/ru/sandbox/208462/" rel="noopener"
+                                   target="_blank">Статья на Хабр</a></p></div>
+                        <div><p><span alt="Pasted image 20240123204641.png"
+                                      class="internal-embed media-embed image-embed is-loaded"
+                                      src="lib/media/pasted-image-20240123204641.png"><img
+                                alt="Pasted image 20240123204641.png"
+                                src="lib/media/pasted-image-20240123204641.png"></span></p></div>
+                        <div class="heading-wrapper">
+                            <h2 class="heading" data-heading="Предисловие (можно пропустить)"
+                                id="Предисловие_(можно_пропустить)">
+                                <div class="heading-before"></div>
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg class="svg-icon right-triangle" fill="none" height="24" stroke="currentColor"
+                                         stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                         style="width:24px;max-width:100%" viewBox="0 0 24 24"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                Предисловие (можно пропустить)
+                                <div class="heading-after">...</div>
+                            </h2>
+                            <div class="heading-children">
+                                <div><p>Привет! Это мой первый пост, буду рад услышать профессиональное и не очень
+                                    мнение по поводу этой статьи. Я мобильный разработчик (таковым себя считаю) с опытом
+                                    работы около года. В этой статье будет рассмотрено возможное решение проблемы, с
+                                    которой вы можете столкнуться в процессе освоения Compose Multiplatform. Статья не
+                                    претендует на истину в последней инстанции и тем более не является прямой
+                                    инструкцией к выполнению. Вы всегда можете придумать свое, более эффективное и
+                                    красивое решение, я лишь делюсь собственным опытом разработки.</p></div>
+                                <div>
+                                    <blockquote><p>Результат работы в конце</p></blockquote>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="heading-wrapper">
+                            <h2 class="heading" data-heading="Что мы хотим?" id="Что_мы_хотим?">
+                                <div class="heading-before"></div>
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg class="svg-icon right-triangle" fill="none" height="24" stroke="currentColor"
+                                         stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                         style="width:24px;max-width:100%" viewBox="0 0 24 24"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                Что мы хотим?
+                                <div class="heading-after">...</div>
+                            </h2>
+                            <div class="heading-children">
+                                <div><p>В одном проекте, который мы решили делать полностью с
+                                    использованием&nbsp;<strong>Compose Multiplatform</strong>, была поставлена задача
+                                    реализовать работу&nbsp;<strong>Яндекс Карт</strong>. Приложение для сети сервисных
+                                    центров, поэтому на карте должны отображаться метки СТО, а также собственная метка
+                                    пользователя для вызова мастера на место.</p></div>
+                                <div><p><span alt="Pasted image 20240123204704.png"
+                                              class="internal-embed media-embed image-embed is-loaded"
+                                              src="lib/media/pasted-image-20240123204704.png"><img
+                                        alt="Pasted image 20240123204704.png"
+                                        src="lib/media/pasted-image-20240123204704.png"></span></p></div>
+                                <div><p>Библиотека MapKit представлена как для Android, так и для iOS. На&nbsp;<a
+                                        aria-label="https://yandex.ru/dev/mapkit/doc/ru/" class="external-link"
+                                        data-tooltip-position="top" href="https://yandex.ru/dev/mapkit/doc/ru/" rel="noopener"
+                                        target="_blank">сайте</a>&nbsp;приемлемая документация, в которой несложно
+                                    разобраться, но больше всего в ходе работы мне помогли примеры с официальных
+                                    репозиториев для&nbsp;<a aria-label="https://github.com/yandex/mapkit-ios-demo"
+                                                             class="external-link"
+                                                             data-tooltip-position="top" href="https://github.com/yandex/mapkit-ios-demo"
+                                                             rel="noopener"
+                                                             target="_blank">iOS</a>&nbsp;и&nbsp;<a
+                                            aria-label="https://github.com/yandex/mapkit-android-demo"
+                                            class="external-link" data-tooltip-position="top"
+                                            href="https://github.com/yandex/mapkit-android-demo" rel="noopener"
+                                            target="_blank">Android</a>&nbsp;с различными семплами.</p></div>
+                            </div>
+                        </div>
+                        <div class="heading-wrapper">
+                            <h2 class="heading" data-heading="Возможные способы реализации:"
+                                id="Возможные_способы_реализации:">
+                                <div class="heading-before"></div>
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg class="svg-icon right-triangle" fill="none" height="24" stroke="currentColor"
+                                         stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                         style="width:24px;max-width:100%" viewBox="0 0 24 24"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                Возможные способы реализации:
+                                <div class="heading-after">...</div>
+                            </h2>
+                            <div class="heading-children">
+                                <div class="heading-wrapper">
+                                    <h4 class="heading" data-heading="1. Использовать native cocoapods"
+                                        id="1._Использовать_native_cocoapods">
+                                        <div class="heading-before"></div>
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg class="svg-icon right-triangle" fill="none" height="24"
+                                                 stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                 stroke-width="2" style="width:24px;max-width:100%"
+                                                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        1. Использовать native cocoapods
+                                        <div class="heading-after">...</div>
+                                    </h4>
+                                    <div class="heading-children">
+                                        <div><p>С самого начала я попробовал проделать стандартную процедуру из&nbsp;<a
+                                                aria-label="https://kotlinlang.org/docs/native-cocoapods-libraries.html#with-custom-cinterop-options"
+                                                class="external-link"
+                                                data-tooltip-position="top" href="https://kotlinlang.org/docs/native-cocoapods-libraries.html#with-custom-cinterop-options"
+                                                rel="noopener"
+                                                target="_blank">документации Kotlin</a>. Подключаем Pod прямо в описании
+                                            build.gradle, можем даже указать название пакета или еще какие-нибудь флаги
+                                            cinterop. Под капотом всей этой темы работает cinterop. Он прочтет заголовки
+                                            уже скомпилированной библиотеки Objective-C и создаст нам klib файлы,
+                                            которые позволяют легко "трогать" нужный нам функционал, не покидая common
+                                            module.&nbsp;Кстати, в&nbsp;документации Kotlin даже в&nbsp;качестве примера
+                                            используется YandexMapsMobile.</p></div>
+                                        <div><p><span alt="Pasted image 20240123204724.png"
+                                                      class="internal-embed media-embed image-embed is-loaded"
+                                                      src="lib/media/pasted-image-20240123204724.png"><img
+                                                alt="Pasted image 20240123204724.png"
+                                                src="lib/media/pasted-image-20240123204724.png"></span><br><em>Примерная
+                                            схема работы с подключенным pod</em></p></div>
+                                        <div><pre class="language-kotlin" tabindex="0"><code
+                                                class="language-kotlin is-loaded"><span class="token comment">// build.gradle.kts</span>
+
+kotlin <span class="token punctuation">{</span>
+    <span class="token function">ios</span><span class="token punctuation">(</span><span
+                                                    class="token punctuation">)</span>
+
+    cocoapods <span class="token punctuation">{</span>
+        summary <span class="token operator">=</span> <span class="token string-literal singleline"><span
+                                                    class="token string">"CocoaPods test library"</span></span>
+        homepage <span class="token operator">=</span> <span class="token string-literal singleline"><span
+                                                    class="token string">"https://github.com/JetBrains/kotlin"</span></span>
+
+        ios<span class="token punctuation">.</span>deploymentTarget <span class="token operator">=</span> <span
+                                                    class="token string-literal singleline"><span class="token string">"13.5"</span></span>
+
+        <span class="token function">pod</span><span class="token punctuation">(</span><span
+                                                    class="token string-literal singleline"><span class="token string">"YandexMapsMobile"</span></span><span
+                                                    class="token punctuation">)</span> <span
+                                                    class="token punctuation">{</span>
+            version <span class="token operator">=</span> <span class="token string-literal singleline"><span
+                                                    class="token string">"4.4.0-lite"</span></span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// iosMain/*.kt</span>
+<span class="token keyword">import</span> cocoapods<span class="token punctuation">.</span>YandexMapKit<span
+                                                    class="token punctuation">.</span><span
+                                                    class="token operator">*</span>
+</code><button class="copy-code-button">Copy</button></pre>
+                                        </div>
+                                        <div><p>Этот способ не сработал. Конкретно сама библиотека скомпилировалась,
+                                            линковщик отработал, импорты тоже, даже установка токена работала. Но вот,
+                                            как только в проекте появился следующий импорт:</p></div>
+                                        <div><pre class="language-kotlin" tabindex="0"><code
+                                                class="language-kotlin is-loaded"><span
+                                                class="token keyword">import</span> cocoapods<span
+                                                class="token punctuation">.</span>YandexMapsMobile<span
+                                                class="token punctuation">.</span>YMKMapView
+</code><button class="copy-code-button">Copy</button></pre>
+                                        </div>
+                                        <div><p>То сразу посыпались ошибки линковщика:&nbsp;<code>Undefined symbols:
+                                            "OBJC_CLASS на-на-на</code>&nbsp;Проблема была вызвана именно OpenGL
+                                            зависимостью, которую карты используют для отрисовки, именно поэтому
+                                            линковщик выдает исключение, когда в проект импортируется представление
+                                            карты. Так как проект уже задерживался, нужно в срочном порядке придумать
+                                            другое решение.</p></div>
+                                    </div>
+                                </div>
+                                <div class="heading-wrapper">
+                                    <h4 class="heading" data-heading="2. Framework and custom library"
+                                        id="2._Framework_and_custom_library">
+                                        <div class="heading-before"></div>
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg class="svg-icon right-triangle" fill="none" height="24"
+                                                 stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                 stroke-width="2" style="width:24px;max-width:100%"
+                                                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        2. Framework and custom library
+                                        <div class="heading-after">...</div>
+                                    </h4>
+                                    <div class="heading-children">
+                                        <div><p>Можно самостоятельно скомпилировать библиотеку YandexMapsMobile в
+                                            framework, включая все зависимости и подключить, что называется, вручную.
+                                            Данный способ тоже&nbsp;<a aria-label="https://kotlinlang.org/docs/native-c-interop.html"
+                                                                       class="external-link"
+                                                                       data-tooltip-position="top" href="https://kotlinlang.org/docs/native-c-interop.html"
+                                                                       rel="noopener"
+                                                                       target="_blank">описан в документации</a>&nbsp;и
+                                            довольно широко применяется. Отличие от предыдущего метода заключается лишь
+                                            в том, что мы просто собираем framework сами, а не возлагаем эту ношу на
+                                            cocoapods.<br>"<em>А как же мне достать framework, а не pod?</em>" - подумал
+                                            я. Оказалось все довольно просто. Получить .framework библиотеки можно
+                                            несколькими способами:</p></div>
+                                        <div>
+                                            <ol>
+                                                <li data-line="0">Найти на&nbsp;<a aria-label="https://yandex.ru/dev/mapkit/doc/ru/faq"
+                                                                                   class="external-link"
+                                                                                   data-tooltip-position="top" href="https://yandex.ru/dev/mapkit/doc/ru/faq"
+                                                                                   rel="noopener"
+                                                                                   target="_blank">официальной
+                                                    странице</a>&nbsp;разработчиков
+                                                </li>
+                                                <li data-line="2">Найти на&nbsp;<a aria-label="https://github.com/c-villain/YandexMapsMobile"
+                                                                                   class="external-link"
+                                                                                   data-tooltip-position="top" href="https://github.com/c-villain/YandexMapsMobile"
+                                                                                   rel="noopener"
+                                                                                   target="_blank">неофициальной
+                                                    странице</a>&nbsp;от хороших людей
+                                                </li>
+                                                <li data-line="4">Собрать своими ручками проект с pod зависимостью и
+                                                    достать framework из DerivedData (тут ссылки нет – своими ручками
+                                                    все)
+                                                </li>
+                                            </ol>
+                                        </div>
+                                        <div><p>После того, как задача с .framework решена, можно приступать к его
+                                            подключению в проект.</p></div>
+                                        <div>
+                                            <ol>
+                                                <li data-line="0">Кидаем куда-нибудь в проект ваш .framework</li>
+                                                <li data-line="2">Создаем .def файл с информацией о нашем framework</li>
+                                                <li data-line="4">Пишем конфигурацию в build.gradle.kts и радуемся&nbsp;<del>
+                                                    или нет
+                                                </del>
+                                                </li>
+                                            </ol>
+                                        </div>
+                                        <div><pre class="language-kotlin" tabindex="0"><code
+                                                class="language-kotlin is-loaded"><span class="token comment">// build.gradle.kts</span>
+kotlin <span class="token punctuation">{</span>
+  sourceSets <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> myYandexMapsMobileDefFilePath <span class="token operator">=</span> <span
+                                                    class="token string-literal singleline"><span
+                                                    class="token string">"</span><span class="token interpolation"><span
+                                                    class="token interpolation-punctuation punctuation">$</span><span
+                                                    class="token expression">projectDir</span></span><span
+                                                    class="token string">/src/nativeInterop/cinterop/YandexMapsMobile.def"</span></span>
+    <span class="token keyword">val</span> myYandexMapsMobileCompilerLinkerOpts <span
+                                                    class="token operator">=</span> <span
+                                                    class="token string-literal singleline"><span class="token string">"-F</span><span
+                                                    class="token interpolation"><span
+                                                    class="token interpolation-punctuation punctuation">${</span><span
+                                                    class="token expression">projectDir</span><span
+                                                    class="token interpolation-punctuation punctuation">}</span></span><span
+                                                    class="token string">/../iosApp/"</span></span>
+    <span class="token keyword">val</span> myYandexMapsMobileIncludeDirs <span class="token operator">=</span> <span
+                                                    class="token string-literal singleline"><span
+                                                    class="token string">"</span><span class="token interpolation"><span
+                                                    class="token interpolation-punctuation punctuation">$</span><span
+                                                    class="token expression">projectDir</span></span><span
+                                                    class="token string">/../iosApp/Pods/YandexMapsMobile"</span></span>
+    iosArm64 <span class="token punctuation">{</span>
+        compilations<span class="token punctuation">.</span><span class="token function">getByName</span><span
+                                                    class="token punctuation">(</span><span
+                                                    class="token string-literal singleline"><span class="token string">"main"</span></span><span
+                                                    class="token punctuation">)</span> <span
+                                                    class="token punctuation">{</span>
+            <span class="token keyword">val</span> YandexMapsMobile <span class="token keyword">by</span> cinterops<span
+                                                    class="token punctuation">.</span><span class="token function">creating</span> <span
+                                                    class="token punctuation">{</span>
+                <span class="token comment">// Path to .def file</span>
+                <span class="token function">packageName</span><span class="token punctuation">(</span><span
+                                                    class="token string-literal singleline"><span class="token string">"cocoapods.YandexMapsMobile"</span></span><span
+                                                    class="token punctuation">)</span>
+                <span class="token function">defFile</span><span class="token punctuation">(</span>myYandexMapsMobileDefFilePath<span
+                                                    class="token punctuation">)</span>
+                <span class="token function">includeDirs</span><span class="token punctuation">(</span>myYandexMapsMobileIncludeDirs<span
+                                                    class="token punctuation">)</span>
+                <span class="token function">compilerOpts</span><span class="token punctuation">(</span>myYandexMapsMobileCompilerLinkerOpts<span
+                                                    class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    
+        binaries<span class="token punctuation">.</span><span class="token function">all</span> <span
+                                                    class="token punctuation">{</span>
+            <span class="token comment">// Tell the linker where the framework is located.</span>
+            <span class="token function">linkerOpts</span><span class="token punctuation">(</span>myYandexMapsMobileCompilerLinkerOpts<span
+                                                    class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">Copy</button></pre>
+                                        </div>
+                                        <div><p>Как написать .def файл и добавить собственные linker options можете
+                                            узнать в документации Kotlin multiplatform.</p></div>
+                                        <div><p>На этом этапе ошибка не пропала, поэтому пришлось решать задачу
+                                            "обходным путем"</p></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="heading-wrapper">
+                            <h2 class="heading" data-heading="План Б" id="План_Б">
+                                <div class="heading-before"></div>
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg class="svg-icon right-triangle" fill="none" height="24" stroke="currentColor"
+                                         stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                         style="width:24px;max-width:100%" viewBox="0 0 24 24"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                План Б
+                                <div class="heading-after">...</div>
+                            </h2>
+                            <div class="heading-children">
+                                <div>
+                                    <blockquote><p>Внимание, если у вас получилось все сделать с помощью предыдущих
+                                        методов, то это отлично! Решение ниже актуально для меня.</p></blockquote>
+                                </div>
+                                <div><p>Идея заключается в том, чтобы описать нужные функции представления карты в
+                                    протоколе. Через Kotlin framework он передается в Swift (импорт из ComposeApp), там
+                                    мы пишем реализацию на Swift (включая&nbsp;<code>UIViewController</code>) и делаем
+                                    инъекцию в DI, тем самым расшарив код для Kotlin. Далее уже в iosMain в Kotlin
+                                    нужная реализация достается из DI, дополнительно настраивается и обертывается в&nbsp;<code>UIKitView</code>.
+                                </p></div>
+                                <div><p><span alt="Pasted image 20240123204930.png"
+                                              class="internal-embed media-embed image-embed is-loaded"
+                                              src="lib/media/pasted-image-20240123204930.png"><img
+                                        alt="Pasted image 20240123204930.png"
+                                        src="lib/media/pasted-image-20240123204930.png"></span><br><em>Общая схема
+                                    работы</em></p></div>
+                                <div class="heading-wrapper">
+                                    <h4 class="heading" data-heading="Podfile (iosApp)" id="Podfile_(iosApp)">
+                                        <div class="heading-before"></div>
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg class="svg-icon right-triangle" fill="none" height="24"
+                                                 stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                 stroke-width="2" style="width:24px;max-width:100%"
+                                                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Podfile (iosApp)
+                                        <div class="heading-after">...</div>
+                                    </h4>
+                                    <div class="heading-children">
+                                        <div><p>Представление самой карты написано на swift и используется библиотека,
+                                            импортированная через pod. Kotlin framework тоже через pod добавлен (native
+                                            cocoapods), поэтому pod я добавил, просто прописав в Podfile вручную.</p>
+                                        </div>
+                                        <div><pre><code># ../iosApp/Podfile
+
+platform :ios, '14.1'
+
+target 'iosApp' do
+  use_frameworks!
+
+  pod 'composeApp', :path =&gt; '../composeApp'
+  pod 'YandexMapsMobile', '4.4.0-lite' # Yandex Maps SDK
+
+end
+</code><button class="copy-code-button">Copy</button></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="heading-wrapper">
+                                    <h4 class="heading" data-heading="YandexMapView.kt (commonMain)"
+                                        id="YandexMapView.kt_(commonMain)">
+                                        <div class="heading-before"></div>
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg class="svg-icon right-triangle" fill="none" height="24"
+                                                 stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                 stroke-width="2" style="width:24px;max-width:100%"
+                                                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        YandexMapView.kt (commonMain)
+                                        <div class="heading-after">...</div>
+                                    </h4>
+                                    <div class="heading-children">
+                                        <div><p>Для работы с представлением карты в проекте написана Composabel expect
+                                            функция, она реализована в iosMain и в androidMain. Параметры естественно
+                                            зависят от ваших потребностей.</p></div>
+                                        <div><pre class="language-kotlin" tabindex="0"><code
+                                                class="language-kotlin is-loaded"><span
+                                                class="token annotation builtin">@Composable</span>
+<span class="token keyword">expect</span> <span class="token keyword">fun</span> <span
+                                                    class="token function">YandexMap</span><span
+                                                    class="token punctuation">(</span>
+    modifier<span class="token operator">:</span> Modifier <span class="token operator">=</span> Modifier<span
+                                                    class="token punctuation">,</span>
+    enabled<span class="token operator">:</span> Boolean <span class="token operator">=</span> <span
+                                                    class="token boolean">true</span><span
+                                                    class="token punctuation">,</span>
+    zoom<span class="token operator">:</span> Float <span class="token operator">=</span> <span
+                                                    class="token number">14f</span><span
+                                                    class="token punctuation">,</span>
+    location<span class="token operator">:</span> LatLng<span class="token operator">?</span> <span
+                                                    class="token operator">=</span> <span
+                                                    class="token keyword">null</span><span
+                                                    class="token punctuation">,</span>
+    startPosition<span class="token operator">:</span> LatLng<span class="token operator">?</span> <span
+                                                    class="token operator">=</span> <span
+                                                    class="token keyword">null</span><span
+                                                    class="token punctuation">,</span>
+    points<span class="token operator">:</span> List<span class="token operator">&lt;</span>PointMapModel<span
+                                                    class="token operator">&gt;</span><span
+                                                    class="token punctuation">,</span>
+    onPointClick<span class="token operator">:</span> <span class="token punctuation">(</span>id<span
+                                                    class="token operator">:</span> Long<span class="token punctuation">)</span> <span
+                                                    class="token operator">-&gt;</span> Unit<span
+                                                    class="token punctuation">,</span>
+    customPosition<span class="token operator">:</span> Boolean<span class="token punctuation">,</span>
+    canSelectPosition<span class="token operator">:</span> Boolean<span class="token punctuation">,</span>
+    anotherLocationSelected<span class="token operator">:</span> Boolean<span class="token punctuation">,</span>
+    bottomFocusAreaPadding<span class="token operator">:</span> Int<span class="token punctuation">,</span>
+    onPositionSelected<span class="token operator">:</span> <span class="token punctuation">(</span>lat<span
+                                                    class="token operator">:</span> Double<span
+                                                    class="token punctuation">,</span> lng<span
+                                                    class="token operator">:</span> Double<span
+                                                    class="token punctuation">)</span> <span class="token operator">-&gt;</span> Unit<span
+                                                    class="token punctuation">,</span>
+    onDragged<span class="token operator">:</span> <span class="token punctuation">(</span><span
+                                                    class="token punctuation">)</span> <span class="token operator">-&gt;</span> Unit
+<span class="token punctuation">)</span>
+</code><button class="copy-code-button">Copy</button></pre>
+                                        </div>
+                                        <div>
+                                            <div class="callout is-collapsible is-collapsed node-insert-event" data-callout="info" data-callout-fold="-"
+                                                 data-callout-metadata="">
+                                                <div class="callout-title">
+                                                    <div class="callout-icon">
+                                                        <svg height="16" style="width:16px;max-width:100%"></svg>
+                                                    </div>
+                                                    <div class="callout-title-inner">Описание параметров (уникально для
+                                                        проекта)
+                                                    </div>
+                                                    <div class="callout-fold is-collapsed">
+                                                        <svg class="svg-icon lucide-chevron-down" fill="none"
+                                                             height="24" stroke="currentColor" stroke-linecap="round"
+                                                             stroke-linejoin="round" stroke-width="2"
+                                                             style="width:24px;max-width:100%"
+                                                             viewBox="0 0 24 24"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="m6 9 6 6 6-6"></path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="callout-content" style="display:none"><p>
+                                                    <code>enabled</code>&nbsp;– статус view (используется, если
+                                                    скрывается диалогом)<br><code>zoom</code>&nbsp;– зум карты (не
+                                                    используется пока)<br><code>location</code>&nbsp;– местоположение
+                                                    пользователя (latitude и longitude)<br><code>startPosition</code>&nbsp;–
+                                                    стартовое положение камеры карты
+                                                    (запоминается)<br><code>points</code>&nbsp;– список точек СТО
+                                                    (координаты, название и тд)<br><code>onPointClick</code>&nbsp;–
+                                                    callback для выбора точки СТО<br><code>customPosition</code>&nbsp;–
+                                                    выбранная пользователем точка<br><code>canSelectPosition</code>&nbsp;–
+                                                    может ли пользователь сам выбрать точку<br><code>anotherLocationSelected</code>&nbsp;–
+                                                    статус (выбрана ли точка
+                                                    вручную)<br><code>bottomFocusAreaPadding</code>&nbsp;– размер
+                                                    bottomsheet, перекрывающего карту<br><code>onPositionSelected</code>&nbsp;–
+                                                    callback для выбора метку вручную<br><code>onDragged</code>&nbsp;–
+                                                    callback если пользователь сдвинул карту (чтобы не следить за его
+                                                    местоположением)</p></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="heading-wrapper">
+                                    <h4 class="heading" data-heading="YandexMapProtocol.kt (iosMain)"
+                                        id="YandexMapProtocol.kt_(iosMain)">
+                                        <div class="heading-before"></div>
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg class="svg-icon right-triangle" fill="none" height="24"
+                                                 stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                 stroke-width="2" style="width:24px;max-width:100%"
+                                                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        YandexMapProtocol.kt (iosMain)
+                                        <div class="heading-after">...</div>
+                                    </h4>
+                                    <div class="heading-children">
+                                        <div><p>Я попробовал различными способами
+                                            завернуть&nbsp;<code>UIViewController</code>, но лучше ничего не получилось,
+                                            чем его просто разместить как поле в протоколе.</p></div>
+                                        <div>
+                                            <div class="block-language-button">
+                                                <button class="button-default blue">GitHub Gist</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="heading-wrapper">
+                                    <h4 class="heading" data-heading="MapViewController.swift (iosApp)"
+                                        id="MapViewController.swift_(iosApp)">
+                                        <div class="heading-before"></div>
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg class="svg-icon right-triangle" fill="none" height="24"
+                                                 stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                 stroke-width="2" style="width:24px;max-width:100%"
+                                                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        MapViewController.swift (iosApp)
+                                        <div class="heading-after">...</div>
+                                    </h4>
+                                    <div class="heading-children">
+                                        <div><p>Следующий код отвечает за реализацию представления с использованием
+                                            YandexMapsMobile и UIKit. Для удобства можно размещать все классы по разным
+                                            файлам, как это сделано в примерах, для статьи все занес в&nbsp;<a
+                                                    aria-label="https://gist.github.com/stakancheck/1daef28a83c76039b6d661b544a10d36"
+                                                    class="external-link"
+                                                    data-tooltip-position="top" href="https://gist.github.com/stakancheck/1daef28a83c76039b6d661b544a10d36"
+                                                    rel="noopener"
+                                                    target="_blank">один файл</a>.</p></div>
+                                        <div>
+                                            <div class="block-language-button">
+                                                <button class="button-default blue">GitHub Gist</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="heading-wrapper">
+                                    <h4 class="heading" data-heading="KoinDI.ios.kt (iosMain)"
+                                        id="KoinDI.ios.kt_(iosMain)">
+                                        <div class="heading-before"></div>
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg class="svg-icon right-triangle" fill="none" height="24"
+                                                 stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                 stroke-width="2" style="width:24px;max-width:100%"
+                                                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        KoinDI.ios.kt (iosMain)
+                                        <div class="heading-after">...</div>
+                                    </h4>
+                                    <div class="heading-children">
+                                        <div><p>Ниже описана функция для инициализации DI. Реализация карты передается
+                                            через параметр и встраивается вместе с общим модулем и специфичным для
+                                            платформы.</p></div>
+                                        <div><pre class="language-kotlin" tabindex="0"><code
+                                                class="language-kotlin is-loaded"><span class="token keyword">fun</span> <span
+                                                class="token function">initKoinIos</span><span
+                                                class="token punctuation">(</span>
+    mapProtocol<span class="token operator">:</span> YandexMapProtocol
+<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    startKoin <span class="token punctuation">{</span>
+        <span class="token function">modules</span><span class="token punctuation">(</span>
+            module <span class="token punctuation">{</span>
+                single<span class="token operator">&lt;</span>YandexMapProtocol<span class="token operator">&gt;</span> <span
+                                                    class="token punctuation">{</span> mapProtocol <span
+                                                    class="token punctuation">}</span>
+            <span class="token punctuation">}</span> <span class="token operator">+</span>
+            <span class="token function">commonModule</span><span class="token punctuation">(</span><span
+                                                    class="token punctuation">)</span> <span
+                                                    class="token operator">+</span>
+            <span class="token function">listOf</span><span class="token punctuation">(</span><span
+                                                    class="token function">platformModule</span><span
+                                                    class="token punctuation">(</span><span
+                                                    class="token punctuation">)</span><span
+                                                    class="token punctuation">)</span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    Napier<span class="token punctuation">.</span><span class="token function">base</span><span
+                                                    class="token punctuation">(</span><span class="token function">DebugAntilog</span><span
+                                                    class="token punctuation">(</span><span
+                                                    class="token punctuation">)</span><span
+                                                    class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">Copy</button></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="heading-wrapper">
+                                    <h4 class="heading" data-heading="iOSApp.swift" id="iOSApp.swift">
+                                        <div class="heading-before"></div>
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg class="svg-icon right-triangle" fill="none" height="24"
+                                                 stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                 stroke-width="2" style="width:24px;max-width:100%"
+                                                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        iOSApp.swift
+                                        <div class="heading-after">...</div>
+                                    </h4>
+                                    <div class="heading-children">
+                                        <div><p>Собственно сам запуск DI и также установка токена карты. Запускать карту&nbsp;<code>onStart()</code>&nbsp;в
+                                            этом месте вовсе необязательно.</p></div>
+                                        <div><pre class="language-swift" tabindex="0"><code
+                                                class="language-swift is-loaded"><span
+                                                class="token keyword">import</span> <span class="token class-name">SwiftUI</span>
+<span class="token keyword">import</span> <span class="token class-name">ComposeApp</span>
+<span class="token keyword">import</span> <span class="token class-name">YandexMapsMobile</span>
+  
+<span class="token attribute atrule">@main</span>
+ <span class="token keyword">struct</span> iOSApp<span class="token punctuation">:</span> <span
+                                                    class="token class-name">App</span> <span class="token punctuation">{</span>
+    <span class="token keyword">init</span><span class="token punctuation">(</span><span
+                                                    class="token punctuation">)</span> <span
+                                                    class="token punctuation">{</span>
+        <span class="token class-name">YMKMapKit</span><span class="token punctuation">.</span><span
+                                                    class="token function">setApiKey</span><span
+                                                    class="token punctuation">(</span><span class="token class-name">Constants</span><span
+                                                    class="token punctuation">(</span><span
+                                                    class="token punctuation">)</span><span
+                                                    class="token punctuation">.</span><span class="token constant">MAPKIT_API_KEY</span><span
+                                                    class="token punctuation">)</span>
+        <span class="token class-name">YMKMapKit</span><span class="token punctuation">.</span><span
+                                                    class="token function">sharedInstance</span><span
+                                                    class="token punctuation">(</span><span
+                                                    class="token punctuation">)</span><span
+                                                    class="token punctuation">.</span><span class="token function">onStart</span><span
+                                                    class="token punctuation">(</span><span
+                                                    class="token punctuation">)</span>
+        <span class="token class-name">KoinDI_iosKt</span><span class="token punctuation">.</span><span
+                                                    class="token function">doInitKoinIos</span><span
+                                                    class="token punctuation">(</span>mapProtocol<span
+                                                    class="token punctuation">:</span> <span class="token class-name">YandexMapProtocolImpl</span><span
+                                                    class="token punctuation">(</span><span
+                                                    class="token punctuation">)</span><span
+                                                    class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+	<span class="token keyword">var</span> body<span class="token punctuation">:</span> <span
+                                                    class="token keyword">some</span> <span class="token class-name">Scene</span> <span
+                                                    class="token punctuation">{</span>
+		<span class="token class-name">WindowGroup</span> <span class="token punctuation">{</span>
+		<span class="token class-name">ContentView</span><span class="token punctuation">(</span><span
+                                                    class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button">Copy</button></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="heading-wrapper">
+                                    <h4 class="heading" data-heading="YandexMapView.ios.kt (iosMain)"
+                                        id="YandexMapView.ios.kt_(iosMain)">
+                                        <div class="heading-before"></div>
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg class="svg-icon right-triangle" fill="none" height="24"
+                                                 stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                 stroke-width="2" style="width:24px;max-width:100%"
+                                                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        YandexMapView.ios.kt (iosMain)
+                                        <div class="heading-after">...</div>
+                                    </h4>
+                                    <div class="heading-children">
+                                        <div><p>Реализация actual функции со специфичной логикой.</p></div>
+                                        <div><p>Главные моменты это изъятие из DI нужного модуля.</p></div>
+                                        <div><pre class="language-kotlin" tabindex="0"><code
+                                                class="language-kotlin is-loaded"><span class="token keyword">val</span> yandexMapProtocol <span
+                                                class="token operator">=</span> koinInject<span class="token operator">&lt;</span>YandexMapProtocol<span
+                                                class="token operator">&gt;</span><span
+                                                class="token punctuation">(</span><span
+                                                class="token punctuation">)</span><span
+                                                class="token punctuation">.</span><span
+                                                class="token function">apply</span> <span
+                                                class="token punctuation">{</span>
+        <span class="token function">addCameraListener</span><span class="token punctuation">(</span>onDragged<span
+                                                    class="token punctuation">)</span>
+        <span class="token function">addMapPointListener</span><span class="token punctuation">(</span>onPointClick<span
+                                                    class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+</code><button class="copy-code-button">Copy</button></pre>
+                                        </div>
+                                        <div><p>Далее обертка в UIKitView</p></div>
+                                        <div><pre class="language-kotlin" tabindex="0"><code
+                                                class="language-kotlin is-loaded"><span
+                                                class="token function">UIKitView</span><span
+                                                class="token punctuation">(</span>
+        factory <span class="token operator">=</span> <span class="token punctuation">{</span>
+            yandexMapProtocol<span class="token punctuation">.</span>viewController<span
+                                                    class="token punctuation">.</span>view
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code><button class="copy-code-button">Copy</button></pre>
+                                        </div>
+                                        <div><p>Полный код файла:</p></div>
+                                        <div>
+                                            <div class="block-language-button">
+                                                <button class="button-default blue">GitHub Gist</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="heading-wrapper">
+                            <h2 class="heading" data-heading="Результаты" id="Результаты">
+                                <div class="heading-before"></div>
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg class="svg-icon right-triangle" fill="none" height="24" stroke="currentColor"
+                                         stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                         style="width:24px;max-width:100%" viewBox="0 0 24 24"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                Результаты
+                                <div class="heading-after">...</div>
+                            </h2>
+                            <div class="heading-children">
+                                <div><p>Еще раз повторюсь, что описанное решение не является самым оптимальным путем.
+                                    Так как лучше всего описывать весь интерфейс на Kotlin, но это только, если удастся
+                                    победить cinterop. А данной реализации нам хватило, скорее всего в дальнейшем мы
+                                    напишем полный протокол и заведем это в отдельное SDK для внутреннего использования,
+                                    чтобы подключать как модуль.</p></div>
+                                <div><p>Быстродействие карты такое же как и в стандартной реализации, все-таки это
+                                    native 🤙.</p></div>
+                            </div>
+                        </div>
+                        <div class="heading-wrapper">
+                            <h2 class="heading" data-heading="Полезные ссылки" id="Полезные_ссылки">
+                                <div class="heading-before"></div>
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg class="svg-icon right-triangle" fill="none" height="24" stroke="currentColor"
+                                         stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                         style="width:24px;max-width:100%" viewBox="0 0 24 24"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                Полезные ссылки
+                                <div class="heading-after">...</div>
+                            </h2>
+                            <div class="heading-children">
+                                <div><p><a aria-label="https://www.droidcon.com/2022/06/28/sdk-design-and-publishing-for-kotlin-multiplatform-mobile/"
+                                           class="external-link"
+                                           data-tooltip-position="top" href="https://www.droidcon.com/2022/06/28/sdk-design-and-publishing-for-kotlin-multiplatform-mobile/"
+                                           rel="noopener"
+                                           target="_blank">Доклад про работу c нативными зависимостями в KMP проекте
+                                    (про framework, cinterop)</a><br><a aria-label="https://medium.com/@sbpetryaev/introducing-yandex-maps-mapkit-to-your-ios-application-ca811333f6fb"
+                                                                        class="external-link"
+                                                                        data-tooltip-position="top" href="https://medium.com/@sbpetryaev/introducing-yandex-maps-mapkit-to-your-ios-application-ca811333f6fb"
+                                                                        rel="noopener"
+                                                                        target="_blank">Статья про реализацию Yandex
+                                    Maps в pure iOS</a><br><a aria-label="https://medium.com/@mofeejegi/calling-platform-specific-dependencies-in-kotlin-multiplatform-69dbc9a841a2"
+                                                              class="external-link"
+                                                              data-tooltip-position="top" href="https://medium.com/@mofeejegi/calling-platform-specific-dependencies-in-kotlin-multiplatform-69dbc9a841a2"
+                                                              rel="noopener"
+                                                              target="_blank">Про вызов специфичных для платформы
+                                    модулей</a><br><a aria-label="https://freedium.cfd/swlh/kotlin-multiplatform-ios-frameworks-dependencies-2320ca13ea30"
+                                                      class="external-link"
+                                                      data-tooltip-position="top" href="https://freedium.cfd/swlh/kotlin-multiplatform-ios-frameworks-dependencies-2320ca13ea30"
+                                                      rel="noopener"
+                                                      target="_blank">Добавление iOS зависимостей в KMP проект</a><br>Некоторые
+                                    membres only, но никто вам не запрещает глянуть зеркала</p></div>
+                            </div>
+                        </div>
+                        <div class="heading-wrapper">
+                            <h2 class="heading" data-heading="Прощание" id="Прощание">
+                                <div class="heading-before"></div>
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg class="svg-icon right-triangle" fill="none" height="24" stroke="currentColor"
+                                         stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                         style="width:24px;max-width:100%" viewBox="0 0 24 24"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                Прощание
+                                <div class="heading-after">...</div>
+                            </h2>
+                            <div class="heading-children">
+                                <div><p>Спасибо за прочтение статьи! Когда я сам искал решение этой проблемы, мне было
+                                    довольно сложно, не хватало поддержки от опытных разработчиков, поэтому, надеюсь,
+                                    что мой материал все-таки кому-нибудь пригодится. Видео работы приложения приведено
+                                    ниже. Комментарии и критика приветствуется, но учтите, мне 17, если обидите, то маме
+                                    пожалуюсь 😉.</p></div>
+                                <div>
+                                    <blockquote><p>Если вам понравилось статья и хотите меня отблагодарить, то можете
+                                        подписаться на мой TG канал&nbsp;<a class="external-link" href="https://t.me/stakan_live"
+                                                                            rel="noopener"
+                                                                            target="_blank">https://t.me/stakan_live</a>.
+                                        Маленький блог о разработке и жизни.</p></blockquote>
+                                </div>
+                                <div><p>Теги:</p></div>
+                                <div>
+                                    <ul>
+                                        <li data-line="0"><a aria-label="https://habr.com/ru/search/?target_type=posts&amp;order=relevance&amp;q=%5B%D1%8F%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%20%D0%BA%D0%B0%D1%80%D1%82%D1%8B%5D"
+                                                             class="external-link"
+                                                             data-tooltip-position="top" href="https://habr.com/ru/search/?target_type=posts&amp;order=relevance&amp;q=%5B%D1%8F%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%20%D0%BA%D0%B0%D1%80%D1%82%D1%8B%5D"
+                                                             rel="noopener"
+                                                             target="_blank">яндекс карты</a></li>
+                                        <li data-line="1"><a aria-label="https://habr.com/ru/search/?target_type=posts&amp;order=relevance&amp;q=%5Bcompose%20multiplatform%5D"
+                                                             class="external-link"
+                                                             data-tooltip-position="top" href="https://habr.com/ru/search/?target_type=posts&amp;order=relevance&amp;q=%5Bcompose%20multiplatform%5D"
+                                                             rel="noopener"
+                                                             target="_blank">compose multiplatform</a></li>
+                                        <li data-line="2"><a aria-label="https://habr.com/ru/search/?target_type=posts&amp;order=relevance&amp;q=%5Bkotlin%20multiplatform%20mobile%5D"
+                                                             class="external-link"
+                                                             data-tooltip-position="top" href="https://habr.com/ru/search/?target_type=posts&amp;order=relevance&amp;q=%5Bkotlin%20multiplatform%20mobile%5D"
+                                                             rel="noopener"
+                                                             target="_blank">kotlin multiplatform mobile</a></li>
+                                        <li data-line="3"><a aria-label="https://habr.com/ru/search/?target_type=posts&amp;order=relevance&amp;q=%5Bkotlin%20multiplatform%5D"
+                                                             class="external-link"
+                                                             data-tooltip-position="top" href="https://habr.com/ru/search/?target_type=posts&amp;order=relevance&amp;q=%5Bkotlin%20multiplatform%5D"
+                                                             rel="noopener"
+                                                             target="_blank">kotlin multiplatform</a></li>
+                                        <li data-line="4"><a aria-label="https://habr.com/ru/search/?target_type=posts&amp;order=relevance&amp;q=%5Byandex%20maps%5D"
+                                                             class="external-link"
+                                                             data-tooltip-position="top" href="https://habr.com/ru/search/?target_type=posts&amp;order=relevance&amp;q=%5Byandex%20maps%5D"
+                                                             rel="noopener"
+                                                             target="_blank">yandex maps</a></li>
+                                    </ul>
+                                </div>
+                                <div><p>Хабы:</p></div>
+                                <div>
+                                    <ul>
+                                        <li data-line="0"><a aria-label="https://habr.com/ru/hubs/mobile_dev/"
+                                                             class="external-link"
+                                                             data-tooltip-position="top" href="https://habr.com/ru/hubs/mobile_dev/"
+                                                             rel="noopener"
+                                                             target="_blank">Разработка мобильных приложений</a></li>
+                                        <li data-line="1"><a aria-label="https://habr.com/ru/hubs/kotlin/"
+                                                             class="external-link"
+                                                             data-tooltip-position="top" href="https://habr.com/ru/hubs/kotlin/"
+                                                             rel="noopener" target="_blank">Kotlin</a>
+                                        </li>
+                                        <li data-line="2"><a aria-label="https://habr.com/ru/hubs/jetpack-compose/"
+                                                             class="external-link"
+                                                             data-tooltip-position="top" href="https://habr.com/ru/hubs/jetpack-compose/"
+                                                             rel="noopener"
+                                                             target="_blank">Jetpack Compose</a></li>
+                                        <li data-line="3"><a aria-label="https://habr.com/ru/hubs/swift/"
+                                                             class="external-link" data-tooltip-position="top"
+                                                             href="https://habr.com/ru/hubs/swift/"
+                                                             rel="noopener" target="_blank">Swift</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mod-footer"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar-right sidebar">
+        <div class="sidebar-gutter">
+            <div class="clickable-icon sidebar-collapse-icon">
+                <svg class="svg-icon" fill="none" height="100%" stroke="currentColor" stroke-linecap="round"
+                     stroke-linejoin="round" stroke-width="3" viewBox="0 0 24 24" width="100%"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path>
+                    <path d="M10 4V20"></path>
+                    <path d="M4 7H7"></path>
+                    <path d="M4 10H7"></path>
+                    <path d="M4 13H7"></path>
+                </svg>
+            </div>
+        </div>
+        <div class="sidebar-container">
+            <div class="sidebar-sizer">
+                <div class="sidebar-content-positioner">
+                    <div class="sidebar-content">
+                        <div class="tree-container outline-tree" data-depth="0">
+                            <div class="tree-header"><span class="sidebar-section-header">Table Of Contents</span>
+                                <button class="clickable-icon collapse-tree-button">
+                                    <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round"
+                                         stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"
+                                         xmlns="http://www.w3.org/2000/svg"></svg>
+                                </button>
+                            </div>
+                            <div class="tree-scroll-area">
+                                <div class="tree-item" data-depth="1">
+                                    <div class="tree-item-contents"><a class="internal-link tree-item-link"
+                                                                       href="#Заводим_Яндекс_Карты_в_Compose_Multipltform"><span
+                                            class="tree-item-title"><p>Заводим Яндекс Карты в Compose Multipltform</p></span></a>
+                                    </div>
+                                    <div class="tree-item-children">
+                                        <div class="tree-item" data-depth="2">
+                                            <div class="tree-item-contents"><a class="internal-link tree-item-link"
+                                                                               href="#Предисловие_(можно_пропустить)"><span
+                                                    class="tree-item-title"><p>Предисловие (можно пропустить)</p></span></a>
+                                            </div>
+                                            <div class="tree-item-children"></div>
+                                        </div>
+                                        <div class="tree-item" data-depth="2">
+                                            <div class="tree-item-contents"><a class="internal-link tree-item-link"
+                                                                               href="#Что_мы_хотим?"><span
+                                                    class="tree-item-title"><p>Что мы хотим?</p></span></a></div>
+                                            <div class="tree-item-children"></div>
+                                        </div>
+                                        <div class="tree-item mod-collapsible" data-depth="2">
+                                            <div class="tree-item-contents"><a class="internal-link tree-item-link"
+                                                                               href="#Возможные_способы_реализации:">
+                                                <div class="tree-item-icon collapse-icon">
+                                                    <svg class="svg-icon right-triangle" fill="none" height="24"
+                                                         stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                         stroke-width="2" viewBox="0 0 24 24" width="24"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                <span class="tree-item-title"><p>Возможные способы реализации:</p></span></a>
+                                            </div>
+                                            <div class="tree-item-children">
+                                                <div class="tree-item" data-depth="4">
+                                                    <div class="tree-item-contents"><a
+                                                            class="internal-link tree-item-link"
+                                                            href="#1._Использовать_native_cocoapods"><span
+                                                            class="tree-item-title"><p>1. Использовать native cocoapods</p></span></a>
+                                                    </div>
+                                                    <div class="tree-item-children"></div>
+                                                </div>
+                                                <div class="tree-item" data-depth="4">
+                                                    <div class="tree-item-contents"><a
+                                                            class="internal-link tree-item-link"
+                                                            href="#2._Framework_and_custom_library"><span
+                                                            class="tree-item-title"><p>2. Framework and custom library</p></span></a>
+                                                    </div>
+                                                    <div class="tree-item-children"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tree-item mod-collapsible" data-depth="2">
+                                            <div class="tree-item-contents"><a class="internal-link tree-item-link"
+                                                                               href="#План_Б">
+                                                <div class="tree-item-icon collapse-icon">
+                                                    <svg class="svg-icon right-triangle" fill="none" height="24"
+                                                         stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                         stroke-width="2" viewBox="0 0 24 24" width="24"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                <span class="tree-item-title"><p>План Б</p></span></a></div>
+                                            <div class="tree-item-children">
+                                                <div class="tree-item" data-depth="4">
+                                                    <div class="tree-item-contents"><a
+                                                            class="internal-link tree-item-link"
+                                                            href="#Podfile_(iosApp)"><span class="tree-item-title"><p>Podfile (iosApp)</p></span></a>
+                                                    </div>
+                                                    <div class="tree-item-children"></div>
+                                                </div>
+                                                <div class="tree-item" data-depth="4">
+                                                    <div class="tree-item-contents"><a
+                                                            class="internal-link tree-item-link"
+                                                            href="#YandexMapView.kt_(commonMain)"><span
+                                                            class="tree-item-title"><p>YandexMapView.kt (commonMain)</p></span></a>
+                                                    </div>
+                                                    <div class="tree-item-children"></div>
+                                                </div>
+                                                <div class="tree-item" data-depth="4">
+                                                    <div class="tree-item-contents"><a
+                                                            class="internal-link tree-item-link"
+                                                            href="#YandexMapProtocol.kt_(iosMain)"><span
+                                                            class="tree-item-title"><p>YandexMapProtocol.kt (iosMain)</p></span></a>
+                                                    </div>
+                                                    <div class="tree-item-children"></div>
+                                                </div>
+                                                <div class="tree-item" data-depth="4">
+                                                    <div class="tree-item-contents"><a
+                                                            class="internal-link tree-item-link"
+                                                            href="#MapViewController.swift_(iosApp)"><span
+                                                            class="tree-item-title"><p>MapViewController.swift (iosApp)</p></span></a>
+                                                    </div>
+                                                    <div class="tree-item-children"></div>
+                                                </div>
+                                                <div class="tree-item" data-depth="4">
+                                                    <div class="tree-item-contents"><a
+                                                            class="internal-link tree-item-link"
+                                                            href="#KoinDI.ios.kt_(iosMain)"><span
+                                                            class="tree-item-title"><p>KoinDI.ios.kt (iosMain)</p></span></a>
+                                                    </div>
+                                                    <div class="tree-item-children"></div>
+                                                </div>
+                                                <div class="tree-item" data-depth="4">
+                                                    <div class="tree-item-contents"><a
+                                                            class="internal-link tree-item-link"
+                                                            href="#iOSApp.swift"><span class="tree-item-title"><p>iOSApp.swift</p></span></a>
+                                                    </div>
+                                                    <div class="tree-item-children"></div>
+                                                </div>
+                                                <div class="tree-item" data-depth="4">
+                                                    <div class="tree-item-contents"><a
+                                                            class="internal-link tree-item-link"
+                                                            href="#YandexMapView.ios.kt_(iosMain)"><span
+                                                            class="tree-item-title"><p>YandexMapView.ios.kt (iosMain)</p></span></a>
+                                                    </div>
+                                                    <div class="tree-item-children"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tree-item" data-depth="2">
+                                            <div class="tree-item-contents"><a class="internal-link tree-item-link"
+                                                                               href="#Результаты"><span
+                                                    class="tree-item-title"><p>Результаты</p></span></a></div>
+                                            <div class="tree-item-children"></div>
+                                        </div>
+                                        <div class="tree-item" data-depth="2">
+                                            <div class="tree-item-contents"><a class="internal-link tree-item-link"
+                                                                               href="#Полезные_ссылки"><span
+                                                    class="tree-item-title"><p>Полезные ссылки</p></span></a></div>
+                                            <div class="tree-item-children"></div>
+                                        </div>
+                                        <div class="tree-item" data-depth="2">
+                                            <div class="tree-item-contents"><a class="internal-link tree-item-link"
+                                                                               href="#Прощание"><span
+                                                    class="tree-item-title"><p>Прощание</p></span></a></div>
+                                            <div class="tree-item-children"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
