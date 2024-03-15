@@ -9,18 +9,18 @@
 @import "./slides-card.css";
 @import "./boxy-view-style.css";
 
-@import url('https://fonts.googleapis.com/css2?family=Pridi&family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pridi&family=Raleway&Marck+Script&display=swap');
 
 
 :root {
     --linear-gradient-color: linear-gradient(90deg, rgba(70, 218, 207, 1) 0%, rgba(146, 178, 222, 1) 49%, rgba(238, 132, 236, 1) 100%);
-    --background-color: #14151a;
+    --background-color: #0c0b0b;
     --bg-with-opacity: #14151a20;
     --black: #000000;
     --dark-gray: #21222a;
     --gray: #878787;
     --blue: #6ea0ff;
-    --display-text: #f1f1f1;
+    --display-text: #faf8f8;
     --link-color: var(--blue);
     --link-bg-color: var(--linear-gradient-color);
     --pink: #e688e5;
@@ -41,7 +41,7 @@ body {
     font-family: 'Raleway', serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 1em;
+    font-size: 1.2em;
     text-align: left;
     letter-spacing: 0.1em;
     -webkit-tap-highlight-color: transparent;
@@ -67,6 +67,15 @@ header {
     font-size: 8em;
     text-align: center;
     letter-spacing: 0.2em;
+
+    color: var(--display-text);
+}
+
+.alternative-text {
+    font-family: "Marck Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+    display: inline-block;
 }
 
 
@@ -325,7 +334,6 @@ header {
 .section-title {
     font-size: 3em;
     text-align: left;
-
     /*background-image: var(--linear-gradient-color);*/
     color: var(--display-text);
     -webkit-background-clip: text;
@@ -663,9 +671,8 @@ h4 {
 
 .button-info a {
     white-space: nowrap;
-    overflow: hidden;
+    overflow: visible;
     text-overflow: ellipsis;
-    max-width: 200px;
     color: var(--display-text);
     text-decoration: none;
 }
